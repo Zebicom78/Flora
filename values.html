@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Values | Flora City — The Four Pillars of Biophilic Living</title>
+    <meta name="description" content="Discover Flora City's core values: Quality, Thoughtful Design, Thriving Communities, and Sustainability." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text">
+            <span class="brand-name">Flora City</span>
+            <span class="brand-sub">Estates &amp; Residences</span>
+          </div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <button class="btn btn-gold header-cta-btn btn-trigger-enquiry" data-project="Values Inquiry">
+            Enquire Now
+          </button>
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Our Guiding Tenets</span>
+        <h1 class="section-title">The Four Pillars of Flora City</h1>
+        <p class="section-desc">
+          Crafting spaces that inspire life, nurture community, and bring people closer to nature.
+        </p>
+      </div>
+    </section>
+
+    <!-- Values Detail Sections -->
+    <main class="section-padding bg-white">
+      <div class="container">
+        
+        <!-- Pillar 1: Thoughtful Design -->
+        <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; margin-bottom: 5rem;" class="pillar-row">
+          <div>
+            <div style="font-size: 0.8125rem; font-weight: 700; color: var(--color-gold); letter-spacing: 0.12em; margin-bottom: 0.5rem;">01 / ARCHITECTURE</div>
+            <h2 class="section-title">Thoughtful Design</h2>
+            <p class="section-desc" style="margin-bottom: 1rem;">
+              We believe architecture should act as an extension of the natural world. Our structural geometries prioritize passive solar alignment, generous floor-to-ceiling heights, and double-sided natural cross-ventilation.
+            </p>
+            <p class="section-desc">
+              By introducing private sky gardens, deep shaded overhangs, and living vertical plant screens, our homes stay naturally cooler, quieter, and full of soft daylight throughout the day.
+            </p>
+          </div>
+          <div style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-card);">
+            <img src="/src/assets/images/values_sustainable_architecture_1792473663362.jpg" alt="Thoughtful biophilic architecture" style="width: 100%; height: 380px; object-fit: cover;" />
+          </div>
+        </div>
+
+        <!-- Pillar 2: Uncompromising Quality -->
+        <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; margin-bottom: 5rem;" class="pillar-row">
+          <div>
+            <div style="font-size: 0.8125rem; font-weight: 700; color: var(--color-gold); letter-spacing: 0.12em; margin-bottom: 0.5rem;">02 / INTEGRITY</div>
+            <h2 class="section-title">Uncompromising Quality</h2>
+            <p class="section-desc" style="margin-bottom: 1rem;">
+              Every Flora City landmark is engineered with seismic-resilient structural frames, advanced waterproofing membranes, and high-performance acoustic glass.
+            </p>
+            <p class="section-desc">
+              We subject every construction stage to multi-tier quality audits and independent laboratory testing of aggregates, steel, and concrete strength, ensuring our residences provide lifetime peace of mind.
+            </p>
+          </div>
+          <div style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-card);">
+            <img src="/src/assets/images/hero_luxury_residence_1792473663001.jpg" alt="Uncompromising luxury residential quality" style="width: 100%; height: 380px; object-fit: cover;" />
+          </div>
+        </div>
+
+        <!-- Pillar 3: Thriving Communities -->
+        <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; margin-bottom: 5rem;" class="pillar-row">
+          <div>
+            <div style="font-size: 0.8125rem; font-weight: 700; color: var(--color-gold); letter-spacing: 0.12em; margin-bottom: 0.5rem;">03 / COMMUNITY</div>
+            <h2 class="section-title">Thriving Communities</h2>
+            <p class="section-desc" style="margin-bottom: 1rem;">
+              True luxury is found in connection. Our master plans prioritize vehicle-free central parks, pedestrian walkways, open-air amphitheaters, and sprawling multi-level clubhouses.
+            </p>
+            <p class="section-desc">
+              Spaces are intentionally created for neighbors to gather, children to play freely amidst safe greenery, and seniors to enjoy tranquil meditation gardens.
+            </p>
+          </div>
+          <div style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-card);">
+            <img src="/src/assets/images/project_flora_grand_tower_1792473663159.jpg" alt="Thriving community entrances and pathways" style="width: 100%; height: 380px; object-fit: cover;" />
+          </div>
+        </div>
+
+        <!-- Pillar 4: Sustainability -->
+        <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;" class="pillar-row">
+          <div>
+            <div style="font-size: 0.8125rem; font-weight: 700; color: var(--color-gold); letter-spacing: 0.12em; margin-bottom: 0.5rem;">04 / STEWARDSHIP</div>
+            <h2 class="section-title">Sustainability</h2>
+            <p class="section-desc" style="margin-bottom: 1rem;">
+              Sustainability is not an afterthought; it is our foundation. From 75%+ green master-plan footprints and organic waste converters to comprehensive groundwater recharging, Flora City protects future generations.
+            </p>
+            <p class="section-desc">
+              All upcoming communities integrate on-site solar microgrids, EV charging arrays, and 100% wastewater recycling.
+            </p>
+          </div>
+          <div style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-card);">
+            <img src="/src/assets/images/sustainability_green_living_1792473663058.jpg" alt="Sustainable green residential canopy" style="width: 100%; height: 380px; object-fit: cover;" />
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top-row">
+          <div class="footer-brand-summary">
+            <a href="index.html" class="brand-lockup">
+              <img src="/assets/logo/flora-city-logo-light.svg" alt="Flora City Logo" style="height: 38px;" />
+            </a>
+            <p class="footer-desc">
+              Flora City crafts nature-integrated luxury residences, low-density villas, and modern workspaces engineered for wellness.
+            </p>
+          </div>
+          <div class="footer-columns-grid">
+            <div class="footer-column">
+              <div class="footer-column-header">About</div>
+              <ul class="footer-column-links">
+                <li><a href="about.html" class="footer-link">About Flora City</a></li>
+                <li><a href="values.html" class="footer-link">Our Values</a></li>
+                <li><a href="careers.html" class="footer-link">Careers</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <div class="footer-column-header">Projects</div>
+              <ul class="footer-column-links">
+                <li><a href="projects.html" class="footer-link">All Projects</a></li>
+                <li><a href="residential.html" class="footer-link">Residential</a></li>
+                <li><a href="commercial.html" class="footer-link">Commercial</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <div class="footer-column-header">Assistance</div>
+              <ul class="footer-column-links">
+                <li><a href="contact.html" class="footer-link">Contact</a></li>
+                <li><a href="enquire.html" class="footer-link">Enquire</a></li>
+                <li><a href="site-visit.html" class="footer-link">Site Visit</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <div class="footer-column-header">Legal</div>
+              <ul class="footer-column-links">
+                <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+                <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-row">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="site-modal" id="enquiry-modal">
+      <div class="modal-dialog">
+        <button class="modal-close-btn">&times;</button>
+        <h3 class="modal-title">Enquire About Flora City</h3>
+        <form id="enquiry-form">
+          <div class="form-group"><label class="form-label">Name</label><input type="text" name="name" class="form-input" required /></div>
+          <div class="form-group"><label class="form-label">Phone</label><input type="tel" name="phone" class="form-input" required /></div>
+          <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" required /></div>
+          <div class="form-checkbox-row"><input type="checkbox" name="consent" required /><label>I accept terms.</label></div>
+          <button type="submit" class="btn btn-gold" style="width: 100%;">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <style>
+      @media (min-width: 900px) {
+        .pillar-row {
+          grid-template-columns: 1.1fr 1fr !important;
+        }
+        .pillar-row:nth-child(even) {
+          direction: rtl;
+        }
+        .pillar-row:nth-child(even) > div {
+          direction: ltr;
+        }
+      }
+    </style>
+  </body>
+</html>

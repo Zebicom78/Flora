@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers | Join the Flora City Collective</title>
+    <meta name="description" content="Explore opportunities in biophilic architecture, sustainable engineering, and luxury real estate advisory with Flora City." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text"><span class="brand-name">Flora City</span><span class="brand-sub">Estates &amp; Residences</span></div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Work With Purpose</span>
+        <h1 class="section-title">Build Communities That Flourish</h1>
+        <p class="section-desc">
+          Join a multidisciplinary team of architects, environmental engineers, and hospitality pioneers shaping the next chapter of progressive residential living.
+        </p>
+      </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="section-padding bg-white">
+      <div class="container">
+        <div class="story-grid">
+          <div>
+            <span class="eyebrow">Life at Flora City</span>
+            <h2 class="section-title">Craftsmanship Over Speed</h2>
+            <p class="section-desc" style="margin-bottom: 1.25rem;">
+              We value thoughtfulness, intellectual curiosity, and rigorous standards. Whether designing a rainwater harvesting percolation channel or curating five-star clubhouse services, our team members take personal pride in every detail.
+            </p>
+            <p class="section-desc">
+              We offer comprehensive health coverage, continuous executive mentoring, and opportunities to lead pioneer biophilic projects across key metropolitan regions.
+            </p>
+          </div>
+          <div class="story-img-container">
+            <img src="/src/assets/images/values_sustainable_architecture_1792473663362.jpg" alt="Flora City Team Culture" class="story-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Open Positions -->
+    <main class="section-padding bg-ivory">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="eyebrow">Opportunities</span>
+          <h2 class="section-title">Open Positions (Demonstration)</h2>
+          <p class="section-desc center">All listed positions are illustrative vacancies for platform evaluation.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+          
+          <div style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+            <div>
+              <div style="font-size: 0.8125rem; color: var(--color-gold); font-weight: 700;">ARCHITECTURE &amp; DESIGN</div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-forest-dark); margin: 0.25rem 0 0.5rem;">Senior Project Architect (Biophilic Design)</h3>
+              <div style="font-size: 0.875rem; color: var(--color-muted);">Corporate Office / Full-Time · 6+ Years Experience</div>
+            </div>
+            <button class="btn btn-primary" onclick="alert('Careers Demo: Resume submission gateway will be connected to our HR portal.')">Apply Now</button>
+          </div>
+
+          <div style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+            <div>
+              <div style="font-size: 0.8125rem; color: var(--color-gold); font-weight: 700;">ESG &amp; ENGINEERING</div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-forest-dark); margin: 0.25rem 0 0.5rem;">Manager — Sustainable Construction &amp; ESG</h3>
+              <div style="font-size: 0.875rem; color: var(--color-muted);">Indore / Gwalior Sites · Full-Time · 5+ Years Experience</div>
+            </div>
+            <button class="btn btn-primary" onclick="alert('Careers Demo: Resume submission gateway will be connected to our HR portal.')">Apply Now</button>
+          </div>
+
+          <div style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+            <div>
+              <div style="font-size: 0.8125rem; color: var(--color-gold); font-weight: 700;">SALES &amp; HOSPITALITY</div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-forest-dark); margin: 0.25rem 0 0.5rem;">Senior Relationship Manager (Luxury Residences)</h3>
+              <div style="font-size: 0.875rem; color: var(--color-muted);">Bhopal / Delhi NCR · Full-Time · 4+ Years Experience</div>
+            </div>
+            <button class="btn btn-primary" onclick="alert('Careers Demo: Resume submission gateway will be connected to our HR portal.')">Apply Now</button>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom-row" style="padding-top: 0;">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+          <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

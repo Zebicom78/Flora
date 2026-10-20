@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects &amp; Residences | Flora City</title>
+    <meta name="description" content="Explore luxury residential apartments, forest villas, and prime commercial developments by Flora City across Gwalior, Indore, Bhopal, Delhi NCR, and Bengaluru." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text">
+            <span class="brand-name">Flora City</span>
+            <span class="brand-sub">Estates &amp; Residences</span>
+          </div>
+        </a>
+
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link active">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <button class="btn btn-gold header-cta-btn btn-trigger-enquiry" data-project="All Projects Inquiry">
+            Enquire Now
+          </button>
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Drawer Navigation -->
+    <div class="drawer-overlay" aria-hidden="true"></div>
+    <aside class="nav-drawer">
+      <div class="drawer-header">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo-light.svg" alt="Flora City Logo" style="height: 34px;" />
+        </a>
+        <button class="drawer-close-btn">&times;</button>
+      </div>
+      <div class="drawer-content">
+        <ul class="drawer-nav-list">
+          <li class="drawer-nav-item"><a href="index.html" class="drawer-link">Home</a></li>
+          <li class="drawer-nav-item"><a href="about.html" class="drawer-link">About Us</a></li>
+          <li class="drawer-nav-item"><a href="projects.html" class="drawer-link" style="color: var(--color-gold);">Projects</a></li>
+          <li class="drawer-nav-item"><a href="residential.html" class="drawer-sublink" style="padding-left: 1rem;">Residential</a></li>
+          <li class="drawer-nav-item"><a href="commercial.html" class="drawer-sublink" style="padding-left: 1rem;">Commercial</a></li>
+          <li class="drawer-nav-item"><a href="locations.html" class="drawer-link">Our Locations</a></li>
+          <li class="drawer-nav-item"><a href="sustainability.html" class="drawer-link">Sustainability</a></li>
+          <li class="drawer-nav-item"><a href="awards.html" class="drawer-link">Awards &amp; Honors</a></li>
+          <li class="drawer-nav-item"><a href="news.html" class="drawer-link">News &amp; Media</a></li>
+          <li class="drawer-nav-item"><a href="contact.html" class="drawer-link">Contact Us</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Page Header Banner -->
+    <section class="section-padding bg-ivory" style="padding-bottom: 2.5rem;">
+      <div class="container">
+        <span class="eyebrow">Our Master Portfolio</span>
+        <h1 class="section-title">Discover Flora City Residences &amp; Estates</h1>
+        <p class="section-desc">
+          Browse our handpicked residential landmarks and commercial parks. Filter by city, property type, or possession readiness.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects Discovery Main -->
+    <main class="section-padding" style="padding-top: 2rem;">
+      <div class="container">
+        <!-- Interactive Multi-Filter Bar -->
+        <div class="filter-bar-container">
+          <div class="filter-grid">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="filter-search">Keyword Search</label>
+              <input type="text" id="filter-search" class="form-input" placeholder="Search project name, locality..." />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="filter-city">City</label>
+              <select id="filter-city" class="form-select">
+                <option value="all">All Cities</option>
+                <option value="Gwalior">Gwalior</option>
+                <option value="Indore">Indore</option>
+                <option value="Bhopal">Bhopal</option>
+                <option value="Delhi NCR">Delhi NCR</option>
+                <option value="Bengaluru">Bengaluru</option>
+                <option value="Mumbai">Mumbai</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="filter-type">Property Type</label>
+              <select id="filter-type" class="form-select">
+                <option value="all">All Types</option>
+                <option value="Residential">Residential</option>
+                <option value="Commercial">Commercial</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="filter-status">Status</label>
+              <select id="filter-status" class="form-select">
+                <option value="all">All Statuses</option>
+                <option value="New Launch">New Launch</option>
+                <option value="Under Construction">Under Construction</option>
+                <option value="Ready to Move">Ready to Move</option>
+                <option value="Upcoming">Upcoming</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="filter-sort">Sort By</label>
+              <select id="filter-sort" class="form-select">
+                <option value="default">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name">Project Name (A-Z)</option>
+              </select>
+            </div>
+
+            <div>
+              <button class="btn btn-outline-forest" id="filter-reset-btn" style="width: 100%; padding: 0.8rem 1rem;">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Stats & View Mode Toggle -->
+        <div class="filter-stats-bar">
+          <span id="filter-count-display">Loading developments...</span>
+          <div class="view-mode-toggle">
+            <button class="view-mode-btn active" id="view-grid-btn" aria-label="Grid view">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </button>
+            <button class="view-mode-btn" id="view-list-btn" aria-label="List view">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><line x1="8" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/><line x1="8" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2"/><line x1="8" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="6" r="1.5"/><circle cx="4" cy="12" r="1.5"/><circle cx="4" cy="18" r="1.5"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Grid Container -->
+        <div class="location-filtered-grid" id="all-projects-grid">
+          <!-- Dynamically populated by FloraApp in script.js -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top-row">
+          <div class="footer-brand-summary">
+            <a href="index.html" class="brand-lockup">
+              <img src="/assets/logo/flora-city-logo-light.svg" alt="Flora City Logo" style="height: 38px;" />
+            </a>
+            <p class="footer-desc">
+              Flora City crafts nature-integrated luxury residences, low-density villas, and modern workspaces engineered for wellness.
+            </p>
+          </div>
+          <div class="footer-columns-grid">
+            <div class="footer-column">
+              <div class="footer-column-header">Quick Links</div>
+              <ul class="footer-column-links">
+                <li><a href="index.html" class="footer-link">Home</a></li>
+                <li><a href="about.html" class="footer-link">About Us</a></li>
+                <li><a href="values.html" class="footer-link">Our Values</a></li>
+                <li><a href="sustainability.html" class="footer-link">Sustainability</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <div class="footer-column-header">Categories</div>
+              <ul class="footer-column-links">
+                <li><a href="residential.html" class="footer-link">Residential</a></li>
+                <li><a href="commercial.html" class="footer-link">Commercial</a></li>
+                <li><a href="upcoming.html" class="footer-link">Upcoming</a></li>
+                <li><a href="completed.html" class="footer-link">Completed</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <div class="footer-column-header">Assistance</div>
+              <ul class="footer-column-links">
+                <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                <li><a href="enquire.html" class="footer-link">Enquiry Desk</a></li>
+                <li><a href="site-visit.html" class="footer-link">Schedule Visit</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <div class="footer-column-header">Legal</div>
+              <ul class="footer-column-links">
+                <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+                <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+                <li><a href="sitemap.html" class="footer-link">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-row">
+          <div class="footer-copyright">
+            &copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="site-modal" id="enquiry-modal" role="dialog" aria-modal="true">
+      <div class="modal-dialog">
+        <button class="modal-close-btn">&times;</button>
+        <h3 class="modal-title">Enquire About Flora City</h3>
+        <p class="modal-desc">Connect directly with our luxury residential advisory team.</p>
+        <div class="form-alert"></div>
+        <form id="enquiry-form">
+          <div class="form-group">
+            <label class="form-label" for="enquiry-name">Full Name *</label>
+            <input type="text" id="enquiry-name" name="name" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="enquiry-email">Email *</label>
+            <input type="email" id="enquiry-email" name="email" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="enquiry-phone">Phone Number *</label>
+            <input type="tel" id="enquiry-phone" name="phone" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="enquiry-project">Project</label>
+            <select id="enquiry-project" name="project" class="form-select">
+              <option value="Flora Botanica Residences">Flora Botanica Residences</option>
+              <option value="The Flora Reserve">The Flora Reserve</option>
+              <option value="Flora Verdant Heights">Flora Verdant Heights</option>
+              <option value="Flora Grand Avenue">Flora Grand Avenue</option>
+              <option value="Flora Serene Woods">Flora Serene Woods</option>
+            </select>
+          </div>
+          <div class="form-checkbox-row">
+            <input type="checkbox" id="enquiry-consent" name="consent" required />
+            <label for="enquiry-consent">I accept the terms and privacy policy.</label>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width: 100%;">Submit Enquiry</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Project Detail Modal -->
+    <div class="site-modal" id="project-detail-modal" role="dialog" aria-modal="true">
+      <div class="modal-dialog" style="max-width: 780px;">
+        <button class="modal-close-btn">&times;</button>
+        <div class="project-detail-content-target"></div>
+      </div>
+    </div>
+
+    <!-- Site Visit Modal -->
+    <div class="site-modal" id="site-visit-modal" role="dialog" aria-modal="true">
+      <div class="modal-dialog">
+        <button class="modal-close-btn">&times;</button>
+        <h3 class="modal-title">Schedule a Site Visit</h3>
+        <p class="modal-desc">Book a private walk-through of the estate and model residences.</p>
+        <div class="form-alert"></div>
+        <form id="site-visit-form">
+          <div class="form-group">
+            <label class="form-label">Name *</label>
+            <input type="text" name="name" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone *</label>
+            <input type="tel" name="phone" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email *</label>
+            <input type="email" name="email" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Project *</label>
+            <select name="project" class="form-select" id="visit-project" required>
+              <option value="Flora Botanica Residences">Flora Botanica Residences (Gwalior)</option>
+              <option value="The Flora Reserve">The Flora Reserve (Indore)</option>
+              <option value="Flora Verdant Heights">Flora Verdant Heights (Bhopal)</option>
+              <option value="Flora Grand Avenue">Flora Grand Avenue (Delhi NCR)</option>
+            </select>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Date *</label>
+              <input type="date" id="visit-date" name="date" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Time *</label>
+              <select name="time" class="form-select" required>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="03:00 PM">03:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-checkbox-row">
+            <input type="checkbox" name="consent" required />
+            <label>I confirm this site visit booking.</label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Appointment</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="search-modal">
+      <button class="search-close-btn">&times;</button>
+      <div class="search-box-container">
+        <input type="text" class="search-input" placeholder="Search developments..." />
+      </div>
+      <div class="search-results-list"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

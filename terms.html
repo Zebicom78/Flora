@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms &amp; Conditions | Flora City</title>
+    <meta name="description" content="Terms of website usage, intellectual property, and booking terms for Flora City." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text"><span class="brand-name">Flora City</span><span class="brand-sub">Estates &amp; Residences</span></div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Terms of Use</span>
+        <h1 class="section-title">Terms &amp; Conditions</h1>
+        <p class="section-desc">Governing access and interaction with the Flora City website and digital assets.</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <main class="section-padding bg-white">
+      <div class="container-narrow" style="line-height: 1.8; color: var(--color-charcoal);">
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">1. Acceptance of Terms</h2>
+          <p>By accessing or browsing this website, you acknowledge that you have read, understood, and agreed to be bound by these Terms and Conditions along with our Privacy Policy.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">2. Intellectual Property Rights</h2>
+          <p>The trademarks, architectural renders, brand insignias, graphics, and written content displayed on this website are the proprietary assets of Flora City. Unauthorized reproduction, modification, or distribution is strictly prohibited.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">3. Pricing &amp; Availability</h2>
+          <p>Any prices, payment schemes, or unit availabilities mentioned on the website are indicative and subject to change without prior notice. Formal allotment takes place solely upon execution of a registered Agreement for Sale.</p>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom-row" style="padding-top: 0;">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+          <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="sitemap.html">Sitemap</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

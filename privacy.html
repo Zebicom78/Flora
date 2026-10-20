@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy &amp; Disclaimers | Flora City</title>
+    <meta name="description" content="Flora City Privacy Policy, Terms, and Real Estate Regulatory Authority (RERA) statutory disclaimers." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text"><span class="brand-name">Flora City</span><span class="brand-sub">Estates &amp; Residences</span></div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Legal &amp; Regulatory Governance</span>
+        <h1 class="section-title">Privacy Policy &amp; Disclaimers</h1>
+        <p class="section-desc">Last updated: October 2026. Official privacy guidelines and RERA statutory declarations.</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <main class="section-padding bg-white">
+      <div class="container-narrow" style="line-height: 1.8; color: var(--color-charcoal);">
+        
+        <div style="background: #F4EEDF; border: 1px solid rgba(201,166,90,0.3); border-radius: var(--radius-sm); padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; font-size: 0.875rem; color: #5B4823;">
+          <strong>Notice for Legal Review:</strong> The text provided below constitutes a demonstrative template designed for Flora City web evaluation and must be formally vetted by certified legal counsel prior to commercial deployment.
+        </div>
+
+        <section style="margin-bottom: 2.5rem;">
+          <h2 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">1. Information We Collect</h2>
+          <p style="margin-bottom: 1rem;">
+            When you interact with Flora City through our website, schedule a private site visit, or submit an enquiry form, we collect personal contact information including your full name, email address, mobile number, and specific property preferences.
+          </p>
+          <p>
+            We do not sell, rent, or trade your personal information to third-party marketing companies. All data gathered is utilized strictly to provide tailored residential advisory services, schedule estate walk-throughs, and communicate project milestones.
+          </p>
+        </section>
+
+        <section style="margin-bottom: 2.5rem;">
+          <h2 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">2. Security &amp; Data Storage</h2>
+          <p>
+            Flora City employs industry-standard encryption protocols and secure server architectures. Access to your personal data is restricted solely to authorized relationship managers and concierge personnel obligated under strict confidentiality covenants.
+          </p>
+        </section>
+
+        <section style="margin-bottom: 2.5rem;" id="disclaimer">
+          <h2 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">3. Statutory RERA &amp; Architectural Disclaimer</h2>
+          <p style="margin-bottom: 1rem;">
+            All images, artistic renderings, digital floor plans, landscape impressions, and project specifications displayed across this website are artistic impressions and indicative in nature. They do not constitute an offer, contract, or legal commitment of any kind.
+          </p>
+          <p style="margin-bottom: 1rem;">
+            The company reserves the right to modify or adjust elevations, specifications, landscaping, amenities, and floor layouts in accordance with municipal approvals, structural engineering mandates, and competent authority guidelines under applicable Real Estate (Regulation and Development) Act (RERA) rules.
+          </p>
+          <p>
+            Prospective buyers are advised to independently verify all plans, approvals, specifications, terms of sale, and RERA registration details directly with our designated corporate representatives prior to concluding any formal transaction.
+          </p>
+        </section>
+
+        <section>
+          <h2 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">4. Grievance &amp; Compliance Officer</h2>
+          <p>
+            For any queries or concerns regarding personal privacy or legal disclosures, please write to: <br>
+            <strong>Compliance Desk — Flora City Development Group</strong><br>
+            Email: <a href="mailto:compliance@floracity.demo" style="color: var(--color-forest-dark); text-decoration: underline;">compliance@floracity.demo</a><br>
+            Helpline: +91 1800 200 FLORA
+          </p>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom-row" style="padding-top: 0;">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+          <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="sitemap.html">Sitemap</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

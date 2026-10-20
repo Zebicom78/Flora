@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enquire Online | Flora City Residential Advisory</title>
+    <meta name="description" content="Submit your property requirements to Flora City's sales advisory desk for pricing guidance, floor plans, and priority allotment." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text"><span class="brand-name">Flora City</span><span class="brand-sub">Estates &amp; Residences</span></div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Priority Consultation</span>
+        <h1 class="section-title">Online Enquiry Desk</h1>
+        <p class="section-desc">
+          Tell us about your home preferences. Our senior advisors will prepare a personalized portfolio overview and floor plan dossier.
+        </p>
+      </div>
+    </section>
+
+    <!-- Enquiry Form -->
+    <main class="section-padding bg-white">
+      <div class="container-narrow">
+        <div style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: clamp(2rem, 5vw, 3.5rem); box-shadow: var(--shadow-card);">
+          
+          <div class="form-alert"></div>
+
+          <form id="enquiry-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="enquiry-name">Full Name *</label>
+              <input type="text" id="enquiry-name" name="name" class="form-input" placeholder="e.g. Siddharth Mehra" required />
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="enquiry-email">Email Address *</label>
+                <input type="email" id="enquiry-email" name="email" class="form-input" placeholder="siddharth@example.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="enquiry-phone">Mobile Phone (10 digits) *</label>
+                <input type="tel" id="enquiry-phone" name="phone" class="form-input" placeholder="9876543210" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="enquiry-project">Interested Development</label>
+              <select id="enquiry-project" name="project" class="form-select">
+                <option value="Flora Botanica Residences (Gwalior)">Flora Botanica Residences (Gwalior)</option>
+                <option value="The Flora Reserve (Indore)">The Flora Reserve (Indore)</option>
+                <option value="Flora Verdant Heights (Bhopal)">Flora Verdant Heights (Bhopal)</option>
+                <option value="Flora Grand Avenue (Delhi NCR)">Flora Grand Avenue (Delhi NCR)</option>
+                <option value="Flora Serene Woods (Bengaluru)">Flora Serene Woods (Bengaluru)</option>
+                <option value="Flora Solitaire (Mumbai)">Flora Solitaire (Mumbai)</option>
+                <option value="General Luxury Portfolio">General Luxury Portfolio</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Preferred Bedroom Configuration</label>
+              <select name="configuration" class="form-select">
+                <option value="2 BHK">2 BHK Luxury Apartment</option>
+                <option value="3 BHK">3 BHK Sky Residence</option>
+                <option value="4 BHK">4 BHK Signature Mansion</option>
+                <option value="Villa">Exclusive Forest Villa</option>
+                <option value="Commercial">Commercial / Retail Space</option>
+              </select>
+            </div>
+
+            <div class="form-checkbox-row">
+              <input type="checkbox" id="enquiry-consent" name="consent" required />
+              <label for="enquiry-consent">
+                I agree to Flora City's <a href="privacy.html" style="text-decoration: underline;">Privacy Policy</a> and authorize advisors to contact me for demonstration purposes.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width: 100%; padding: 1rem;">
+              Submit Online Enquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom-row" style="padding-top: 0;">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+          <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

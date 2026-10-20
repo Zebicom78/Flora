@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flora Botanica Residences | Signature Sky Mansions | Flora City</title>
+    <meta name="description" content="Explore Flora Botanica Residences in Gwalior: 2, 3 &amp; 4 BHK biophilic luxury apartments with 78% open landscape, infinity pool, and conservatory." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text"><span class="brand-name">Flora City</span><span class="brand-sub">Estates &amp; Residences</span></div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link active">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+          <button class="btn btn-gold header-cta-btn btn-trigger-enquiry" data-project="Flora Botanica Residences">Enquire Now</button>
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Project Hero Header -->
+    <section class="project-detail-hero">
+      <img src="/src/assets/images/hero_luxury_residence_1792473663001.jpg" alt="Flora Botanica Residences Hero" class="project-detail-hero-img" />
+      <div class="project-detail-hero-scrim"></div>
+      <div class="container project-detail-hero-content">
+        <span class="eyebrow" style="color: var(--color-gold);">Under Construction · Possession Dec 2027</span>
+        <h1 class="hero-headline" style="font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 0.5rem;">Flora Botanica Residences</h1>
+        <p style="font-size: 1.15rem; color: rgba(255,255,255,0.9); max-width: 650px;">
+          City Center Extension, Gwalior · 2, 3 &amp; 4 BHK Biophilic Luxury Residences from ₹ 85 Lakhs*
+        </p>
+      </div>
+    </section>
+
+    <!-- Sub-Navigation Sticky Tabs Bar -->
+    <nav class="project-tabs-nav" aria-label="Project Section Navigation">
+      <div class="container" style="display: flex; gap: 2rem;">
+        <a href="#overview" class="project-tab-btn active">Overview</a>
+        <a href="#gallery" class="project-tab-btn">Gallery</a>
+        <a href="#highlights" class="project-tab-btn">Highlights</a>
+        <a href="#amenities" class="project-tab-btn">Amenities</a>
+        <a href="#plans" class="project-tab-btn">Floor Plans</a>
+        <a href="#location" class="project-tab-btn">Location &amp; Landmarks</a>
+        <a href="#inquiry" class="project-tab-btn">Book Visit</a>
+      </div>
+    </nav>
+
+    <!-- Main Project Content -->
+    <main class="section-padding bg-white" style="padding-top: 3rem;">
+      <div class="container">
+        
+        <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem;" class="detail-split-layout">
+          <div>
+            <!-- Overview Section -->
+            <section id="overview" style="margin-bottom: 3.5rem;">
+              <span class="eyebrow">Architectural Vision</span>
+              <h2 class="section-title">A Living Botanical Sanctuary in Gwalior</h2>
+              <p class="section-desc" style="margin-bottom: 1.25rem;">
+                Flora Botanica Residences is conceived as a serene enclave where architectural modernism yields gracefully to living nature. Spread over 9.5 lush acres with only 4 boutique towers, each apartment is oriented to maximize morning light and sweeping views of the central park.
+              </p>
+              <p class="section-desc">
+                With a zero-vehicle ground surface, children and seniors wander freely across shaded orchards, reflection ponds, and sensory herb gardens.
+              </p>
+
+              <!-- Quick Specs Matrix -->
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem; margin-top: 2rem; background: var(--color-ivory); padding: 1.5rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+                <div>
+                  <span style="font-size: 0.75rem; color: var(--color-muted); text-transform: uppercase;">Acreage</span>
+                  <div style="font-weight: 700; font-size: 1.15rem; color: var(--color-forest-dark);">9.5 Acres (78% Open)</div>
+                </div>
+                <div>
+                  <span style="font-size: 0.75rem; color: var(--color-muted); text-transform: uppercase;">Towers</span>
+                  <div style="font-weight: 700; font-size: 1.15rem; color: var(--color-forest-dark);">4 Boutique Towers</div>
+                </div>
+                <div>
+                  <span style="font-size: 0.75rem; color: var(--color-muted); text-transform: uppercase;">Clubhouse</span>
+                  <div style="font-weight: 700; font-size: 1.15rem; color: var(--color-forest-dark);">35,000 sq.ft.</div>
+                </div>
+                <div>
+                  <span style="font-size: 0.75rem; color: var(--color-muted); text-transform: uppercase;">Certification</span>
+                  <div style="font-weight: 700; font-size: 1.15rem; color: var(--color-forest-dark);">IGBC Platinum Target</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Architectural Gallery & Image Slider -->
+            <section id="gallery" style="margin-bottom: 3.5rem;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.25rem;">
+                <div>
+                  <span class="eyebrow">Visual Tour</span>
+                  <h2 class="section-title" style="margin-bottom: 0;">Architectural Image Gallery</h2>
+                </div>
+                <div style="display: flex; gap: 0.5rem;">
+                  <button class="hero-nav-arrow gallery-prev-btn" id="gallery-prev" aria-label="Previous photo" style="border: 1px solid var(--color-border); color: var(--color-forest-dark); background: var(--color-ivory);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  </button>
+                  <button class="hero-nav-arrow gallery-next-btn" id="gallery-next" aria-label="Next photo" style="border: 1px solid var(--color-border); color: var(--color-forest-dark); background: var(--color-ivory);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Main Slide Viewer -->
+              <div class="gallery-slider-viewer" style="position: relative; width: 100%; height: clamp(260px, 44vw, 440px); border-radius: var(--radius-sm); overflow: hidden; background: var(--color-forest-deep); cursor: pointer;" onclick="window.floraApp &amp;&amp; window.floraApp.openLightbox(document.getElementById('gallery-main-img').src)">
+                <img id="gallery-main-img" src="/assets/images/hero_luxury_residence_1792473663001.jpg" alt="Flora Botanica Architecture" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease;" />
+                <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 1.25rem; background: linear-gradient(to top, rgba(13,38,27,0.88) 0%, transparent 100%); color: var(--color-white); display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem;">
+                  <span id="gallery-caption" style="font-size: 0.95rem; font-weight: 500;">Grand Residential Towers &amp; Landscaped Reflection Lake</span>
+                  <span style="font-size: 0.75rem; color: var(--color-gold); background: rgba(0,0,0,0.5); padding: 0.3rem 0.6rem; border-radius: 3px; white-space: nowrap;">Tap to Enlarge</span>
+                </div>
+              </div>
+
+              <!-- Thumbnail Picker Row -->
+              <div class="gallery-thumbs-row" style="display: flex; gap: 0.75rem; overflow-x: auto; margin-top: 1rem; padding-bottom: 0.5rem; scrollbar-width: none;">
+                <div class="gallery-thumb-item active" style="flex: 0 0 100px; height: 68px; border-radius: 4px; overflow: hidden; cursor: pointer; border: 2px solid var(--color-gold);" data-img="/assets/images/hero_luxury_residence_1792473663001.jpg" data-cap="Grand Residential Towers &amp; Landscaped Reflection Lake">
+                  <img src="/assets/images/hero_luxury_residence_1792473663001.jpg" alt="Thumb 1" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="gallery-thumb-item" style="flex: 0 0 100px; height: 68px; border-radius: 4px; overflow: hidden; cursor: pointer; border: 2px solid transparent;" data-img="/assets/images/hero_skyline_penthouse_1792475200074.jpg" data-cap="Penthouse Horizon Deck &amp; Sky Lounge">
+                  <img src="/assets/images/hero_skyline_penthouse_1792475200074.jpg" alt="Thumb 2" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="gallery-thumb-item" style="flex: 0 0 100px; height: 68px; border-radius: 4px; overflow: hidden; cursor: pointer; border: 2px solid transparent;" data-img="/assets/images/hero_botanical_pavilion_1792475216155.jpg" data-cap="Sculptural Botanical Entry Pavilion &amp; Waterfalls">
+                  <img src="/assets/images/hero_botanical_pavilion_1792475216155.jpg" alt="Thumb 3" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="gallery-thumb-item" style="flex: 0 0 100px; height: 68px; border-radius: 4px; overflow: hidden; cursor: pointer; border: 2px solid transparent;" data-img="/assets/images/project_flora_grand_tower_1792473663159.jpg" data-cap="Dusk Balcony Illuminations &amp; Palm Driveway">
+                  <img src="/assets/images/project_flora_grand_tower_1792473663159.jpg" alt="Thumb 4" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="gallery-thumb-item" style="flex: 0 0 100px; height: 68px; border-radius: 4px; overflow: hidden; cursor: pointer; border: 2px solid transparent;" data-img="/assets/images/values_sustainable_architecture_1792473663362.jpg" data-cap="Biophilic Vertical Green Louvers &amp; Sunlight Courtyard">
+                  <img src="/assets/images/values_sustainable_architecture_1792473663362.jpg" alt="Thumb 5" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="gallery-thumb-item" style="flex: 0 0 100px; height: 68px; border-radius: 4px; overflow: hidden; cursor: pointer; border: 2px solid transparent;" data-img="/assets/images/sustainability_green_living_1792473663058.jpg" data-cap="Heritage Woodlands &amp; Community Orchards">
+                  <img src="/assets/images/sustainability_green_living_1792473663058.jpg" alt="Thumb 6" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+              </div>
+            </section>
+
+            <!-- Highlights -->
+            <section id="highlights" style="margin-bottom: 3.5rem;">
+              <span class="eyebrow">Signature Hallmarks</span>
+              <h2 class="section-title">Development Highlights</h2>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem;">
+                <li style="display: flex; gap: 0.75rem; align-items: baseline; font-size: 1rem; color: var(--color-charcoal);">
+                  <span style="color: var(--color-gold); font-size: 1.25rem;">✦</span>
+                  <span><strong>Pedestrian-First Design:</strong> 100% vehicular movement redirected to two-level basements.</span>
+                </li>
+                <li style="display: flex; gap: 0.75rem; align-items: baseline; font-size: 1rem; color: var(--color-charcoal);">
+                  <span style="color: var(--color-gold); font-size: 1.25rem;">✦</span>
+                  <span><strong>Private Sky Balconies:</strong> Extra-deep cantilevered decks with integrated automated drip irrigation planters.</span>
+                </li>
+                <li style="display: flex; gap: 0.75rem; align-items: baseline; font-size: 1rem; color: var(--color-charcoal);">
+                  <span style="color: var(--color-gold); font-size: 1.25rem;">✦</span>
+                  <span><strong>Double Height Lobbies:</strong> Air-conditioned arrival lounges with concierge and water fountain features.</span>
+                </li>
+                <li style="display: flex; gap: 0.75rem; align-items: baseline; font-size: 1rem; color: var(--color-charcoal);">
+                  <span style="color: var(--color-gold); font-size: 1.25rem;">✦</span>
+                  <span><strong>EV Infrastructure:</strong> Dedicated EV charging conduit pre-wired to every resident parking bay.</span>
+                </li>
+              </ul>
+            </section>
+
+            <!-- Amenities -->
+            <section id="amenities" style="margin-bottom: 3.5rem;">
+              <span class="eyebrow">Curated Living</span>
+              <h2 class="section-title">The Grand Botanica Clubhouse</h2>
+              <div class="amenities-grid" style="margin-top: 1.5rem;">
+                <div class="amenity-card">
+                  <div class="amenity-title">Temperature-Controlled Pool</div>
+                  <div class="amenity-desc">Olympic 50m lap pool with shaded cabanas and children's splash bay.</div>
+                </div>
+                <div class="amenity-card">
+                  <div class="amenity-title">Technogym Fitness Deck</div>
+                  <div class="amenity-desc">Equipped fitness pavilion with Pilates studio and personal training zones.</div>
+                </div>
+                <div class="amenity-card">
+                  <div class="amenity-title">Botanical Conservatory</div>
+                  <div class="amenity-desc">Indoor climate-controlled garden housing exotic orchids and ferns.</div>
+                </div>
+                <div class="amenity-card">
+                  <div class="amenity-title">Acoustic Private Cinema</div>
+                  <div class="amenity-desc">Dolby Atmos-enabled 24-seater resident screening auditorium.</div>
+                </div>
+                <div class="amenity-card">
+                  <div class="amenity-title">Championship Tennis</div>
+                  <div class="amenity-desc">Floodlit synthetic hard courts with spectator pavilion.</div>
+                </div>
+                <div class="amenity-card">
+                  <div class="amenity-title">Co-Working Suites</div>
+                  <div class="amenity-desc">Private video conferencing booths, espresso bar, and high-speed fibre.</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Floor Plans Section -->
+            <section id="plans" style="margin-bottom: 3.5rem;">
+              <span class="eyebrow">Thoughtful Spatial Planning</span>
+              <h2 class="section-title">Master Plan &amp; Residences</h2>
+              <p class="section-desc" style="margin-bottom: 2rem;">
+                Every layout eliminates wasted corridor circulation, delivering 82% carpet efficiency and private bedroom wings.
+              </p>
+
+              <div class="floor-plans-container">
+                <div class="floor-plan-card">
+                  <div class="floor-plan-img-wrap" onclick="window.floraApp.openEnquiryModal('Flora Botanica 3 BHK Floor Plan')">
+                    <img src="/src/assets/images/values_sustainable_architecture_1792473663362.jpg" alt="Floor Plan Rendering" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;" />
+                  </div>
+                  <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-forest-dark);">3 BHK Signature Garden Suite</h4>
+                  <div style="font-size: 0.875rem; color: var(--color-muted); margin-bottom: 1rem;">Super Built-up: 1,850 sq.ft. · Carpet: 1,495 sq.ft.</div>
+                  <button class="btn btn-outline-forest" onclick="window.floraApp.openEnquiryModal('Flora Botanica 3 BHK Floor Plan')" style="width: 100%;">
+                    Request Detailed CAD Plan
+                  </button>
+                </div>
+
+                <div class="floor-plan-card">
+                  <div class="floor-plan-img-wrap" onclick="window.floraApp.openEnquiryModal('Flora Botanica 4 BHK Sky Mansion')">
+                    <img src="/src/assets/images/project_flora_grand_tower_1792473663159.jpg" alt="Floor Plan Rendering" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;" />
+                  </div>
+                  <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-forest-dark);">4 BHK Sky Mansion</h4>
+                  <div style="font-size: 0.875rem; color: var(--color-muted); margin-bottom: 1rem;">Super Built-up: 2,750 sq.ft. · Carpet: 2,210 sq.ft.</div>
+                  <button class="btn btn-outline-forest" onclick="window.floraApp.openEnquiryModal('Flora Botanica 4 BHK Sky Mansion')" style="width: 100%;">
+                    Request Detailed CAD Plan
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Location & Landmarks -->
+            <section id="location" style="margin-bottom: 3.5rem;">
+              <span class="eyebrow">Strategic Neighborhood</span>
+              <h2 class="section-title">City Center Extension Connectivity</h2>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 1.5rem;">
+                <div style="background: var(--color-ivory); padding: 1.25rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+                  <div style="font-size: 0.8125rem; color: var(--color-gold); font-weight: 700;">5 MINUTES</div>
+                  <div style="font-weight: 600; color: var(--color-forest-dark);">Gwalior Railway Station</div>
+                  <div style="font-size: 0.8125rem; color: var(--color-muted);">Seamless inter-city rail access</div>
+                </div>
+                <div style="background: var(--color-ivory); padding: 1.25rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+                  <div style="font-size: 0.8125rem; color: var(--color-gold); font-weight: 700;">12 MINUTES</div>
+                  <div style="font-weight: 600; color: var(--color-forest-dark);">Rajmata Vijaya Raje Airport</div>
+                  <div style="font-size: 0.8125rem; color: var(--color-muted);">Direct flights to Delhi &amp; Mumbai</div>
+                </div>
+                <div style="background: var(--color-ivory); padding: 1.25rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+                  <div style="font-size: 0.8125rem; color: var(--color-gold); font-weight: 700;">3 MINUTES</div>
+                  <div style="font-weight: 600; color: var(--color-forest-dark);">Leading Hospitals &amp; Schools</div>
+                  <div style="font-size: 0.8125rem; color: var(--color-muted);">Reputed educational institutions</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Legal Disclaimers & RERA -->
+            <div style="background: #F4EEDF; border: 1px solid rgba(201,166,90,0.3); border-radius: var(--radius-sm); padding: 1.5rem; font-size: 0.8125rem; color: #5B4823; line-height: 1.6;">
+              <strong>RERA Registration:</strong> MPRERA/PRJ/DEMO/2026/089. Project is registered with Madhya Pradesh Real Estate Regulatory Authority. All images, layouts, views, and configurations are for demonstration purposes and subject to final municipal clearances.
+            </div>
+          </div>
+
+          <!-- Sticky Sidebar / Lead Capture -->
+          <div>
+            <div style="background: var(--color-ivory); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 2.25rem 2rem; position: sticky; top: calc(var(--header-height) + 2rem);" id="inquiry">
+              <span class="eyebrow" style="color: var(--color-gold);">Priority Assistance</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.5rem;">Schedule a Private Tour</h3>
+              <p style="font-size: 0.875rem; color: var(--color-muted); margin-bottom: 1.5rem;">Experience the sample residence, botanical nursery, and view layouts with our property advisory specialists.</p>
+              
+              <button class="btn btn-gold btn-trigger-site-visit" data-project="Flora Botanica Residences" style="width: 100%; margin-bottom: 0.75rem;">
+                Schedule Site Visit
+              </button>
+              <button class="btn btn-outline-forest btn-trigger-enquiry" data-project="Flora Botanica Residences" style="width: 100%; margin-bottom: 1.5rem;">
+                Request Pricing &amp; Callback
+              </button>
+              
+              <div style="border-top: 1px solid var(--color-border); padding-top: 1.25rem; font-size: 0.8125rem; color: var(--color-muted);">
+                <div>Call Desk: +91 1800 200 FLORA</div>
+                <div>Email: concierge@floracity.demo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom-row" style="padding-top: 0;">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+          <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="site-modal" id="enquiry-modal"><div class="modal-dialog"><button class="modal-close-btn">&times;</button><h3 class="modal-title">Enquiry</h3><form id="enquiry-form"><div class="form-group"><label class="form-label">Name</label><input type="text" name="name" class="form-input" required /></div><div class="form-group"><label class="form-label">Phone</label><input type="tel" name="phone" class="form-input" required /></div><button type="submit" class="btn btn-gold" style="width: 100%;">Submit</button></form></div></div>
+    <div class="site-modal" id="site-visit-modal"><div class="modal-dialog"><button class="modal-close-btn">&times;</button><h3 class="modal-title">Site Visit</h3><form id="site-visit-form"><div class="form-group"><label class="form-label">Name</label><input type="text" name="name" class="form-input" required /></div><div class="form-group"><label class="form-label">Date</label><input type="date" id="visit-date" name="date" class="form-input" required /></div><button type="submit" class="btn btn-primary" style="width: 100%;">Confirm</button></form></div></div>
+
+    <script src="./script.js"></script>
+    <script>
+      (function() {
+        var items = document.querySelectorAll('.gallery-thumb-item');
+        var mainImg = document.getElementById('gallery-main-img');
+        var caption = document.getElementById('gallery-caption');
+        var prevBtn = document.getElementById('gallery-prev');
+        var nextBtn = document.getElementById('gallery-next');
+        var currentIndex = 0;
+
+        function updateGallery(index) {
+          if (!items.length) return;
+          currentIndex = (index + items.length) % items.length;
+          items.forEach(function(item, idx) {
+            var isActive = idx === currentIndex;
+            item.style.borderColor = isActive ? 'var(--color-gold)' : 'transparent';
+            if (isActive) {
+              var src = item.getAttribute('data-img');
+              var cap = item.getAttribute('data-cap');
+              if (mainImg) mainImg.src = src;
+              if (caption) caption.textContent = cap;
+              item.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+            }
+          });
+        }
+
+        items.forEach(function(item, idx) {
+          item.addEventListener('click', function() {
+            updateGallery(idx);
+          });
+        });
+
+        if (prevBtn) prevBtn.addEventListener('click', function() { updateGallery(currentIndex - 1); });
+        if (nextBtn) nextBtn.addEventListener('click', function() { updateGallery(currentIndex + 1); });
+      })();
+    </script>
+    <style>
+      @media (min-width: 1024px) {
+        .detail-split-layout {
+          grid-template-columns: 2.2fr 1fr !important;
+        }
+      }
+    </style>
+  </body>
+</html>

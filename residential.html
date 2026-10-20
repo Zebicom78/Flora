@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Residential Luxury Projects | Flora City</title>
+    <meta name="description" content="Discover premium residential apartments, sky mansions, and forest villas by Flora City across premier urban corridors." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text">
+            <span class="brand-name">Flora City</span>
+            <span class="brand-sub">Estates &amp; Residences</span>
+          </div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link active">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <button class="btn btn-gold header-cta-btn btn-trigger-enquiry" data-project="Residential Collection">
+            Enquire Now
+          </button>
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Residential Portfolio</span>
+        <h1 class="section-title">Flora City Residential Collection</h1>
+        <p class="section-desc">
+          Thoughtfully planned apartments, sky residences, and forest villas designed for multigenerational wellness and enduring family comfort.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Grid -->
+    <main class="section-padding bg-white">
+      <div class="container">
+        <div class="location-filtered-grid">
+          <!-- Flora Botanica -->
+          <article class="project-card">
+            <div class="project-card-image-wrap">
+              <img src="/src/assets/images/hero_luxury_residence_1792473663001.jpg" alt="Flora Botanica Residences" class="project-card-img" />
+              <span class="project-badge-status">Under Construction</span>
+            </div>
+            <div class="project-card-body">
+              <span class="project-card-location">City Center Extension, Gwalior</span>
+              <h3 class="project-card-title">Flora Botanica Residences</h3>
+              <div class="project-card-meta"><span>2, 3 &amp; 4 BHK Luxury Apartments</span></div>
+              <div class="project-card-pricing-row">
+                <div><span class="price-label">Starting Price</span><div class="price-value">₹ 85 Lakhs*</div></div>
+                <div style="text-align: right;"><span class="price-label">Possession</span><div style="font-weight: 600;">Dec 2027</div></div>
+              </div>
+              <div class="project-card-actions">
+                <button class="btn btn-outline-forest" onclick="window.floraApp.openProjectDetailModal('flora-botanica')">Know More</button>
+                <button class="btn btn-gold btn-trigger-enquiry" data-project="Flora Botanica Residences">Enquire</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- The Flora Reserve -->
+          <article class="project-card">
+            <div class="project-card-image-wrap">
+              <img src="/src/assets/images/project_flora_grand_tower_1792473663159.jpg" alt="The Flora Reserve" class="project-card-img" />
+              <span class="project-badge-status">New Launch</span>
+            </div>
+            <div class="project-card-body">
+              <span class="project-card-location">Super Corridor, Indore</span>
+              <h3 class="project-card-title">The Flora Reserve</h3>
+              <div class="project-card-meta"><span>3 &amp; 4 BHK Forest Villas &amp; Penthouses</span></div>
+              <div class="project-card-pricing-row">
+                <div><span class="price-label">Starting Price</span><div class="price-value">₹ 1.85 Cr*</div></div>
+                <div style="text-align: right;"><span class="price-label">Possession</span><div style="font-weight: 600;">March 2028</div></div>
+              </div>
+              <div class="project-card-actions">
+                <button class="btn btn-outline-forest" onclick="window.floraApp.openProjectDetailModal('the-flora-reserve')">Know More</button>
+                <button class="btn btn-gold btn-trigger-enquiry" data-project="The Flora Reserve">Enquire</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Flora Verdant Heights -->
+          <article class="project-card">
+            <div class="project-card-image-wrap">
+              <img src="/src/assets/images/values_sustainable_architecture_1792473663362.jpg" alt="Flora Verdant Heights" class="project-card-img" />
+              <span class="project-badge-status">Ready to Move</span>
+            </div>
+            <div class="project-card-body">
+              <span class="project-card-location">Arera Hills, Bhopal</span>
+              <h3 class="project-card-title">Flora Verdant Heights</h3>
+              <div class="project-card-meta"><span>3 &amp; 4 BHK Sky Mansions</span></div>
+              <div class="project-card-pricing-row">
+                <div><span class="price-label">Starting Price</span><div class="price-value">₹ 1.45 Cr*</div></div>
+                <div style="text-align: right;"><span class="price-label">Possession</span><div style="font-weight: 600;">Immediate</div></div>
+              </div>
+              <div class="project-card-actions">
+                <button class="btn btn-outline-forest" onclick="window.floraApp.openProjectDetailModal('flora-verdant-heights')">Know More</button>
+                <button class="btn btn-gold btn-trigger-enquiry" data-project="Flora Verdant Heights">Enquire</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Flora Serene Woods -->
+          <article class="project-card">
+            <div class="project-card-image-wrap">
+              <img src="/src/assets/images/sustainability_green_living_1792473663058.jpg" alt="Flora Serene Woods" class="project-card-img" />
+              <span class="project-badge-status">New Launch</span>
+            </div>
+            <div class="project-card-body">
+              <span class="project-card-location">Whitefield, Bengaluru</span>
+              <h3 class="project-card-title">Flora Serene Woods</h3>
+              <div class="project-card-meta"><span>2 &amp; 3 BHK Biophilic Smart Homes</span></div>
+              <div class="project-card-pricing-row">
+                <div><span class="price-label">Starting Price</span><div class="price-value">₹ 1.10 Cr*</div></div>
+                <div style="text-align: right;"><span class="price-label">Possession</span><div style="font-weight: 600;">Nov 2028</div></div>
+              </div>
+              <div class="project-card-actions">
+                <button class="btn btn-outline-forest" onclick="window.floraApp.openProjectDetailModal('flora-serene-woods')">Know More</button>
+                <button class="btn btn-gold btn-trigger-enquiry" data-project="Flora Serene Woods">Enquire</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top-row">
+          <div class="footer-brand-summary">
+            <a href="index.html" class="brand-lockup">
+              <img src="/assets/logo/flora-city-logo-light.svg" alt="Flora City Logo" style="height: 38px;" />
+            </a>
+            <p class="footer-desc">Crafting spaces that inspire life and bring people closer to nature.</p>
+          </div>
+          <div class="footer-columns-grid">
+            <div class="footer-column">
+              <div class="footer-column-header">Explore</div>
+              <ul class="footer-column-links">
+                <li><a href="projects.html" class="footer-link">All Projects</a></li>
+                <li><a href="residential.html" class="footer-link">Residential</a></li>
+                <li><a href="commercial.html" class="footer-link">Commercial</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <div class="footer-column-header">Locations</div>
+              <ul class="footer-column-links">
+                <li><a href="locations.html" class="footer-link">Gwalior</a></li>
+                <li><a href="locations.html" class="footer-link">Indore</a></li>
+                <li><a href="locations.html" class="footer-link">Bhopal</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <div class="footer-column-header">Connect</div>
+              <ul class="footer-column-links">
+                <li><a href="contact.html" class="footer-link">Contact</a></li>
+                <li><a href="enquire.html" class="footer-link">Enquire</a></li>
+                <li><a href="site-visit.html" class="footer-link">Site Visit</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <div class="footer-column-header">Legal</div>
+              <ul class="footer-column-links">
+                <li><a href="privacy.html" class="footer-link">Privacy</a></li>
+                <li><a href="terms.html" class="footer-link">Terms</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-row">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="site-modal" id="enquiry-modal">
+      <div class="modal-dialog">
+        <button class="modal-close-btn">&times;</button>
+        <h3 class="modal-title">Enquire About Flora City</h3>
+        <div class="form-alert"></div>
+        <form id="enquiry-form">
+          <div class="form-group"><label class="form-label">Full Name *</label><input type="text" name="name" class="form-input" required /></div>
+          <div class="form-group"><label class="form-label">Email *</label><input type="email" name="email" class="form-input" required /></div>
+          <div class="form-group"><label class="form-label">Phone *</label><input type="tel" name="phone" class="form-input" required /></div>
+          <div class="form-checkbox-row"><input type="checkbox" name="consent" required /><label>I accept terms and privacy policy.</label></div>
+          <button type="submit" class="btn btn-gold" style="width: 100%;">Submit Enquiry</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="site-modal" id="project-detail-modal">
+      <div class="modal-dialog" style="max-width: 780px;">
+        <button class="modal-close-btn">&times;</button>
+        <div class="project-detail-content-target"></div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

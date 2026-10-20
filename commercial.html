@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commercial &amp; Retail Promenades | Flora City</title>
+    <meta name="description" content="Explore biophilic Grade-A commercial workspaces and high-street retail destinations by Flora City." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text">
+            <span class="brand-name">Flora City</span>
+            <span class="brand-sub">Estates &amp; Residences</span>
+          </div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link active">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <button class="btn btn-gold header-cta-btn btn-trigger-enquiry" data-project="Commercial Leasing Inquiry">
+            Leasing Desk
+          </button>
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Commercial &amp; High-Street</span>
+        <h1 class="section-title">Forward-Thinking Corporate Destinations</h1>
+        <p class="section-desc">
+          Biophilic business towers, open-air pedestrian retail boulevards, and sustainable office enclaves designed for productivity and wellbeing.
+        </p>
+      </div>
+    </section>
+
+    <!-- Commercial Grid -->
+    <main class="section-padding bg-white">
+      <div class="container">
+        <div class="location-filtered-grid">
+          <!-- Flora Grand Avenue -->
+          <article class="project-card">
+            <div class="project-card-image-wrap">
+              <img src="/src/assets/images/project_flora_grand_tower_1792473663159.jpg" alt="Flora Grand Avenue Commercial" class="project-card-img" />
+              <span class="project-badge-status">Under Construction</span>
+            </div>
+            <div class="project-card-body">
+              <span class="project-card-location">Golf Course Ext. Road, Delhi NCR</span>
+              <h3 class="project-card-title">Flora Grand Avenue</h3>
+              <div class="project-card-meta"><span>Grade-A Office Suites &amp; Retail Promenade</span></div>
+              <div class="project-card-pricing-row">
+                <div><span class="price-label">Starting Price</span><div class="price-value">₹ 1.20 Cr*</div></div>
+                <div style="text-align: right;"><span class="price-label">Possession</span><div style="font-weight: 600;">August 2027</div></div>
+              </div>
+              <div class="project-card-actions">
+                <button class="btn btn-outline-forest" onclick="window.floraApp.openProjectDetailModal('flora-grand-avenue')">Know More</button>
+                <button class="btn btn-gold btn-trigger-enquiry" data-project="Flora Grand Avenue">Enquire</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Commercial Leasing Information Banner -->
+        <div style="margin-top: 4rem; background: var(--color-ivory); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 3rem 2rem; text-align: center;">
+          <span class="eyebrow">Institutional Partnerships</span>
+          <h2 class="section-title" style="max-width: 650px; margin: 0 auto 1rem;">Corporate Workspaces &amp; Flagship Retail Leasing</h2>
+          <p class="section-desc center" style="margin-bottom: 2rem;">
+            Looking for customized multi-floor office headquarters or curated retail space? Connect with our corporate real estate and institutional leasing advisory desk.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-trigger-enquiry" data-project="Corporate Workspace Consultation">
+              Connect with Corporate Leasing
+            </button>
+            <a href="contact.html" class="btn btn-outline-forest">
+              Corporate Office Information
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top-row">
+          <div class="footer-brand-summary">
+            <a href="index.html" class="brand-lockup">
+              <img src="/assets/logo/flora-city-logo-light.svg" alt="Flora City Logo" style="height: 38px;" />
+            </a>
+            <p class="footer-desc">Crafting spaces that inspire life and bring people closer to nature.</p>
+          </div>
+          <div class="footer-columns-grid">
+            <div class="footer-column"><div class="footer-column-header">Explore</div><ul class="footer-column-links"><li><a href="projects.html" class="footer-link">All Projects</a></li><li><a href="residential.html" class="footer-link">Residential</a></li><li><a href="commercial.html" class="footer-link">Commercial</a></li></ul></div>
+            <div class="footer-column"><div class="footer-column-header">Locations</div><ul class="footer-column-links"><li><a href="locations.html" class="footer-link">Delhi NCR</a></li><li><a href="locations.html" class="footer-link">Indore</a></li><li><a href="locations.html" class="footer-link">Gwalior</a></li></ul></div>
+            <div class="footer-column"><div class="footer-column-header">Connect</div><ul class="footer-column-links"><li><a href="contact.html" class="footer-link">Contact</a></li><li><a href="enquire.html" class="footer-link">Enquire</a></li></ul></div>
+            <div class="footer-column"><div class="footer-column-header">Legal</div><ul class="footer-column-links"><li><a href="privacy.html" class="footer-link">Privacy</a></li><li><a href="terms.html" class="footer-link">Terms</a></li></ul></div>
+          </div>
+        </div>
+        <div class="footer-bottom-row"><div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div></div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="site-modal" id="enquiry-modal">
+      <div class="modal-dialog">
+        <button class="modal-close-btn">&times;</button>
+        <h3 class="modal-title">Commercial Enquiry</h3>
+        <div class="form-alert"></div>
+        <form id="enquiry-form">
+          <div class="form-group"><label class="form-label">Name *</label><input type="text" name="name" class="form-input" required /></div>
+          <div class="form-group"><label class="form-label">Email *</label><input type="email" name="email" class="form-input" required /></div>
+          <div class="form-group"><label class="form-label">Phone *</label><input type="tel" name="phone" class="form-input" required /></div>
+          <div class="form-checkbox-row"><input type="checkbox" name="consent" required /><label>I accept terms.</label></div>
+          <button type="submit" class="btn btn-gold" style="width: 100%;">Submit Enquiry</button>
+        </form>
+      </div>
+    </div>
+    <div class="site-modal" id="project-detail-modal"><div class="modal-dialog" style="max-width: 780px;"><button class="modal-close-btn">&times;</button><div class="project-detail-content-target"></div></div></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

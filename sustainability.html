@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sustainability &amp; Green Living | Flora City</title>
+    <meta name="description" content="Discover Flora City's ecological commitments, 75%+ green canopy, rainwater percolation, and Net-Zero ESG roadmap." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text"><span class="brand-name">Flora City</span><span class="brand-sub">Estates &amp; Residences</span></div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link active">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+          <button class="btn btn-gold header-cta-btn btn-trigger-enquiry" data-project="Sustainability Consultation">Enquire Now</button>
+          <button class="menu-toggle-btn" aria-label="Open Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Our Living Pledge</span>
+        <h1 class="section-title">Sustainability &amp; Regenerative Development</h1>
+        <p class="section-desc">
+          Building homes that leave a positive ecological footprint. Exploring our approach to biophilic design, carbon reduction, and zero-waste communities.
+        </p>
+      </div>
+    </section>
+
+    <!-- Full-Width Green Banner -->
+    <section class="sustainability-banner">
+      <img src="/src/assets/images/sustainability_green_living_1792473663058.jpg" alt="Flora City green community masterplan" class="sustainability-bg-img" />
+      <div class="container sustainability-content">
+        <span class="eyebrow" style="color: var(--color-gold);">Net Zero Roadmap</span>
+        <h2 class="section-title light">A Regenerative Ecosystem by Design</h2>
+        <p class="section-desc light" style="max-width: 680px;">
+          Rather than imposing concrete upon nature, Flora City builds around existing topographies, hydrological swales, and mature forest groves.
+        </p>
+      </div>
+    </section>
+
+    <!-- In-Depth Sustainability Pillars -->
+    <main class="section-padding bg-white">
+      <div class="container">
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+          
+          <div class="amenity-card" style="padding: 2rem;">
+            <div style="font-size: 2.5rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 0.5rem;">78%</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">Open Green Spaces</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-muted); line-height: 1.6;">
+              Dedicated native tree sanctuaries, organic herb gardens, and shaded micro-climate walking corridors across every masterplan.
+            </p>
+          </div>
+
+          <div class="amenity-card" style="padding: 2rem;">
+            <div style="font-size: 2.5rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 0.5rem;">100%</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">Rainwater Harvested</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-muted); line-height: 1.6;">
+              High-volume percolation trenches and subterranean cisterns that recharge the surrounding water table throughout monsoons.
+            </p>
+          </div>
+
+          <div class="amenity-card" style="padding: 2rem;">
+            <div style="font-size: 2.5rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 0.5rem;">42%</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">Energy Conservation</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-muted); line-height: 1.6;">
+              Double-glazed acoustic low-E glass, smart solar common microgrids, and daylight-responsive LED fixtures throughout all properties.
+            </p>
+          </div>
+
+          <div class="amenity-card" style="padding: 2rem;">
+            <div style="font-size: 2.5rem; font-family: var(--font-serif); color: var(--color-gold); margin-bottom: 0.5rem;">0%</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">Untreated Waste Discharge</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-muted); line-height: 1.6;">
+              On-site membrane bioreactor sewage treatment plants (MBR) recycling 100% of greywater for landscaping and flushing systems.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Biophilic Architecture Spotlight -->
+        <div class="story-grid">
+          <div class="story-img-container">
+            <img src="/src/assets/images/values_sustainable_architecture_1792473663362.jpg" alt="Biophilic facade with cascading greens" class="story-img" />
+          </div>
+          <div>
+            <span class="eyebrow">Biophilic Living</span>
+            <h2 class="section-title">Bringing Healing Greenery Into Daily Living</h2>
+            <p class="section-desc" style="margin-bottom: 1.25rem;">
+              Studies continuously demonstrate that proximity to living greenery and daylight reduces cortisol levels, boosts cognitive clarity, and fosters deeper emotional connection.
+            </p>
+            <p class="section-desc" style="margin-bottom: 2rem;">
+              At Flora City, every balcony includes engineered planter boxes with automated drip irrigation, vertical green screens that filter airborne particulate matter, and deep shade overhangs designed to cut down cooling loads.
+            </p>
+            <button class="btn btn-forest btn-trigger-site-visit">Experience Biophilic Living in Person</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom-row" style="padding-top: 0;">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+          <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="site-modal" id="enquiry-modal"><div class="modal-dialog"><button class="modal-close-btn">&times;</button><h3 class="modal-title">Enquiry</h3><form id="enquiry-form"><div class="form-group"><label class="form-label">Name</label><input type="text" name="name" class="form-input" required /></div><div class="form-group"><label class="form-label">Phone</label><input type="tel" name="phone" class="form-input" required /></div><button type="submit" class="btn btn-gold" style="width: 100%;">Submit</button></form></div></div>
+    <div class="site-modal" id="site-visit-modal"><div class="modal-dialog"><button class="modal-close-btn">&times;</button><h3 class="modal-title">Site Visit</h3><form id="site-visit-form"><div class="form-group"><label class="form-label">Name</label><input type="text" name="name" class="form-input" required /></div><div class="form-group"><label class="form-label">Date</label><input type="date" id="visit-date" name="date" class="form-input" required /></div><button type="submit" class="btn btn-primary" style="width: 100%;">Confirm</button></form></div></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

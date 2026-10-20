@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Locations | Flora City — Geographic Presence</title>
+    <meta name="description" content="Discover Flora City's developments and land parcels across Gwalior, Indore, Bhopal, Delhi NCR, and Bengaluru." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text"><span class="brand-name">Flora City</span><span class="brand-sub">Estates &amp; Residences</span></div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link">Projects</a>
+          <a href="locations.html" class="desktop-nav-link active">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+          <button class="btn btn-gold header-cta-btn btn-trigger-enquiry" data-project="Regional Locations Inquiry">Enquire Now</button>
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Strategic Corridors</span>
+        <h1 class="section-title">Flora City Across Key Metros</h1>
+        <p class="section-desc">
+          We identify high-growth urban corridors endowed with natural beauty, robust infrastructure, and seamless transit connectivity.
+        </p>
+      </div>
+    </section>
+
+    <!-- Locations Main -->
+    <main class="section-padding bg-white">
+      <div class="container">
+        
+        <!-- Regional Highlights Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+          
+          <div style="border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 2rem; background: var(--color-ivory);" id="gwalior">
+            <span class="eyebrow">Madhya Pradesh</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">Gwalior</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Home to our flagship <strong>Flora Botanica Residences</strong> at City Center Extension. Featuring 78% open landscape and botanical conservatory living.
+            </p>
+            <div style="font-size: 0.8125rem; font-weight: 600; color: var(--color-forest-dark);">Active Projects: 1 Development</div>
+          </div>
+
+          <div style="border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 2rem; background: var(--color-ivory);" id="indore">
+            <span class="eyebrow">Madhya Pradesh</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">Indore</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Located on the high-velocity Super Corridor, <strong>The Flora Reserve</strong> provides low-density forest villas nestled around preserved woodlands.
+            </p>
+            <div style="font-size: 0.8125rem; font-weight: 600; color: var(--color-forest-dark);">Active Projects: 1 Development</div>
+          </div>
+
+          <div style="border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 2rem; background: var(--color-ivory);" id="bhopal">
+            <span class="eyebrow">Madhya Pradesh</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">Bhopal</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Overlooking the upper lake from Arera Hills, <strong>Flora Verdant Heights</strong> delivers ready-to-move-in sky mansions with complete OC certification.
+            </p>
+            <div style="font-size: 0.8125rem; font-weight: 600; color: var(--color-forest-dark);">Active Projects: 1 Ready Development</div>
+          </div>
+
+          <div style="border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 2rem; background: var(--color-ivory);" id="delhi">
+            <span class="eyebrow">National Capital Region</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">Delhi NCR</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Situated on Golf Course Extension Road, <strong>Flora Grand Avenue</strong> blends biophilic corporate office towers with an open-air luxury retail promenade.
+            </p>
+            <div style="font-size: 0.8125rem; font-weight: 600; color: var(--color-forest-dark);">Active Projects: 1 Commercial Hub</div>
+          </div>
+
+          <div style="border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 2rem; background: var(--color-ivory);" id="bengaluru">
+            <span class="eyebrow">Karnataka</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">Bengaluru</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Set in Whitefield, <strong>Flora Serene Woods</strong> brings biophilic smart apartments wrapped around a preserved heritage banyan grove.
+            </p>
+            <div style="font-size: 0.8125rem; font-weight: 600; color: var(--color-forest-dark);">Active Projects: 1 Biophilic Estate</div>
+          </div>
+
+          <div style="border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 2rem; background: var(--color-ivory);" id="mumbai">
+            <span class="eyebrow">Maharashtra</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-forest-dark); margin-bottom: 0.75rem;">Mumbai</h3>
+            <p style="font-size: 0.9375rem; color: var(--color-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Perched at Worli Bay, <strong>Flora Solitaire</strong> is an upcoming ultra-luxury residential landmark offering unobstructed 180° Arabian Sea vistas.
+            </p>
+            <div style="font-size: 0.8125rem; font-weight: 600; color: var(--color-forest-dark);">Status: Upcoming Expression of Interest</div>
+          </div>
+
+        </div>
+
+        <!-- City Selector and Filtered Developments -->
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <span class="eyebrow">Interactive City Filter</span>
+          <h2 class="section-title">Browse Developments by City</h2>
+          <div class="city-pill-selector"></div>
+        </div>
+
+        <div class="location-filtered-grid"></div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom-row" style="padding-top: 0;">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+          <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="site-modal" id="enquiry-modal"><div class="modal-dialog"><button class="modal-close-btn">&times;</button><h3 class="modal-title">Enquiry</h3><form id="enquiry-form"><div class="form-group"><label class="form-label">Name</label><input type="text" name="name" class="form-input" required /></div><div class="form-group"><label class="form-label">Phone</label><input type="tel" name="phone" class="form-input" required /></div><button type="submit" class="btn btn-gold" style="width: 100%;">Submit</button></form></div></div>
+    <div class="site-modal" id="project-detail-modal"><div class="modal-dialog" style="max-width: 780px;"><button class="modal-close-btn">&times;</button><div class="project-detail-content-target"></div></div></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

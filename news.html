@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News &amp; Media Center | Flora City</title>
+    <meta name="description" content="Read the latest press releases, corporate announcements, and project milestones from Flora City." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text"><span class="brand-name">Flora City</span><span class="brand-sub">Estates &amp; Residences</span></div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link active">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+          <button class="btn btn-gold header-cta-btn btn-trigger-enquiry" data-project="Media Inquiry">Media Desk</button>
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Official Media Desk</span>
+        <h1 class="section-title">Press Releases &amp; Brand Stories</h1>
+        <p class="section-desc">
+          Official announcements, construction milestones, and corporate briefings from Flora City.
+        </p>
+      </div>
+    </section>
+
+    <!-- News Grid -->
+    <main class="section-padding bg-white">
+      <div class="container">
+        
+        <div style="background: #F4EEDF; border: 1px solid rgba(201,166,90,0.3); border-radius: var(--radius-sm); padding: 1rem 1.5rem; margin-bottom: 2.5rem; font-size: 0.875rem; color: #5B4823;">
+          <strong>Demonstration Content:</strong> News stories and announcements shown are illustrative demonstration articles for web design evaluation.
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+          
+          <!-- News Card 1 -->
+          <article class="news-card">
+            <div class="news-card-img-wrap">
+              <img src="/src/assets/images/values_sustainable_architecture_1792473663362.jpg" alt="Flora City Vision" class="news-card-img" />
+            </div>
+            <div class="news-card-body">
+              <div class="news-meta-row">
+                <span>Corporate Announcement</span><span aria-hidden="true">·</span><span>October 15, 2026</span>
+              </div>
+              <h2 class="news-card-title">Flora City Shares Its Vision for Thoughtful Urban Living &amp; Biophilic Communities</h2>
+              <p class="news-card-desc">At the annual Urban Future Summit, Flora City unveiled its manifesto for nature-integrated residential architecture designed for wellness and longevity.</p>
+              <button class="btn-link" onclick="window.floraApp.openNewsDetailModal('news-vision-urban-living')">
+                Read Full Story →
+              </button>
+            </div>
+          </article>
+
+          <!-- News Card 2 -->
+          <article class="news-card">
+            <div class="news-card-img-wrap">
+              <img src="/src/assets/images/project_flora_grand_tower_1792473663159.jpg" alt="Phase II Groundbreaking" class="news-card-img" />
+            </div>
+            <div class="news-card-body">
+              <div class="news-meta-row">
+                <span>Project Milestone</span><span aria-hidden="true">·</span><span>September 28, 2026</span>
+              </div>
+              <h2 class="news-card-title">Flora City Announces Groundbreaking on Phase II of Forest Villas in Super Corridor</h2>
+              <p class="news-card-desc">Following overwhelming buyer response to Phase I, work begins on the next phase of luxury low-density villas surrounded by native woodlands.</p>
+              <button class="btn-link" onclick="window.floraApp.openNewsDetailModal('news-super-corridor-phase2')">
+                Read Full Story →
+              </button>
+            </div>
+          </article>
+
+          <!-- News Card 3 -->
+          <article class="news-card">
+            <div class="news-card-img-wrap">
+              <img src="/src/assets/images/sustainability_green_living_1792473663058.jpg" alt="Net-Zero Roadmap" class="news-card-img" />
+            </div>
+            <div class="news-card-body">
+              <div class="news-meta-row">
+                <span>Sustainability</span><span aria-hidden="true">·</span><span>August 19, 2026</span>
+              </div>
+              <h2 class="news-card-title">Flora City Unveils Net-Zero Carbon Commitment Across Upcoming Residential Estates</h2>
+              <p class="news-card-desc">A new framework mandates 100% on-site rainwater harvesting, solar microgrids, and locally sourced low-carbon building materials for all future developments.</p>
+              <button class="btn-link" onclick="window.floraApp.openNewsDetailModal('news-net-zero-roadmap')">
+                Read Full Story →
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom-row" style="padding-top: 0;">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+          <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- News Detail Modal Container -->
+    <div class="site-modal" id="project-detail-modal">
+      <div class="modal-dialog" style="max-width: 780px;">
+        <button class="modal-close-btn">&times;</button>
+        <div class="project-detail-content-target"></div>
+      </div>
+    </div>
+
+    <!-- Enquiry Modal -->
+    <div class="site-modal" id="enquiry-modal">
+      <div class="modal-dialog"><button class="modal-close-btn">&times;</button><h3 class="modal-title">Media Enquiry</h3><form id="enquiry-form"><div class="form-group"><label class="form-label">Name</label><input type="text" name="name" class="form-input" required /></div><div class="form-group"><label class="form-label">Publication / Org</label><input type="text" name="pub" class="form-input" required /></div><div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" required /></div><button type="submit" class="btn btn-gold" style="width: 100%;">Submit Inquiry</button></form></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

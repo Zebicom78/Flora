@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flora City | Premium Real Estate & Luxury Living</title>
+    <meta name="description" content="Discover Flora City's luxury residential towers, sustainable green communities, and thoughtfully designed spaces where contemporary living meets nature." />
+    <meta name="keywords" content="Flora City, luxury apartments, real estate, biophilic architecture, green living, residential projects, Gwalior, Indore, Bhopal, Delhi NCR" />
+    
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Flora City | Premium Real Estate & Luxury Living" />
+    <meta property="og:description" content="Discover Flora City's luxury residential towers, sustainable green communities, and thoughtfully designed spaces where contemporary living meets nature." />
+    <meta property="og:image" content="/src/assets/images/hero_luxury_residence_1792473663001.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Flora City | Premium Real Estate & Luxury Living" />
+    <meta name="twitter:description" content="Spaces That Inspire. Communities That Flourish." />
+    <meta name="twitter:image" content="/src/assets/images/hero_luxury_residence_1792473663001.jpg" />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- =======================================================================
+         HEADER & TOP NAVIGATION
+         ======================================================================= -->
+    <header class="site-header" id="site-header">
+      <div class="header-container">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-lockup" aria-label="Flora City Home">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text">
+            <span class="brand-name">Flora City</span>
+            <span class="brand-sub">Estates &amp; Residences</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="Main Navigation">
+          <a href="index.html" class="desktop-nav-link active">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+
+        <!-- Right Action Items -->
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search properties and updates" title="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          
+          <button class="btn btn-gold header-cta-btn btn-trigger-enquiry" data-project="Flora City Master Portfolio">
+            Enquire Now
+          </button>
+
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <span style="display: none;" class="desktop-menu-text">Menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Drawer Navigation Overlay -->
+    <div class="drawer-overlay" aria-hidden="true"></div>
+
+    <!-- Full-Screen / Drawer Navigation Menu -->
+    <aside class="nav-drawer" aria-label="Mobile & Expanded Navigation">
+      <div class="drawer-header">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo-light.svg" alt="Flora City Logo" style="height: 34px;" />
+        </a>
+        <button class="drawer-close-btn" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="drawer-content">
+        <ul class="drawer-nav-list">
+          <li class="drawer-nav-item">
+            <a href="index.html" class="drawer-link">Home</a>
+          </li>
+          
+          <li class="drawer-nav-item">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <a href="about.html" class="drawer-link" style="flex: 1;">About Us</a>
+              <button class="drawer-submenu-toggle" aria-label="Expand About Us" aria-expanded="false">+</button>
+            </div>
+            <ul class="drawer-submenu">
+              <li><a href="about.html#story" class="drawer-sublink">Our Brand Story</a></li>
+              <li><a href="values.html" class="drawer-sublink">Our Vision &amp; Values</a></li>
+              <li><a href="careers.html" class="drawer-sublink">Careers at Flora City</a></li>
+            </ul>
+          </li>
+
+          <li class="drawer-nav-item">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <a href="projects.html" class="drawer-link" style="flex: 1;">Projects</a>
+              <button class="drawer-submenu-toggle" aria-label="Expand Projects" aria-expanded="false">+</button>
+            </div>
+            <ul class="drawer-submenu">
+              <li><a href="residential.html" class="drawer-sublink">Residential Projects</a></li>
+              <li><a href="commercial.html" class="drawer-sublink">Commercial Spaces</a></li>
+              <li><a href="upcoming.html" class="drawer-sublink">Upcoming Developments</a></li>
+              <li><a href="completed.html" class="drawer-sublink">Completed Estates</a></li>
+            </ul>
+          </li>
+
+          <li class="drawer-nav-item">
+            <a href="locations.html" class="drawer-link">Our Locations</a>
+          </li>
+
+          <li class="drawer-nav-item">
+            <a href="sustainability.html" class="drawer-link">Sustainability &amp; Green Living</a>
+          </li>
+
+          <li class="drawer-nav-item">
+            <a href="awards.html" class="drawer-link">Awards &amp; Recognition</a>
+          </li>
+
+          <li class="drawer-nav-item">
+            <a href="news.html" class="drawer-link">News &amp; Media</a>
+          </li>
+
+          <li class="drawer-nav-item">
+            <a href="contact.html" class="drawer-link">Contact Us</a>
+          </li>
+        </ul>
+
+        <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem;">
+          <button class="btn btn-gold btn-trigger-enquiry" style="width: 100%;">
+            Enquire Now
+          </button>
+          <button class="btn btn-outline-white btn-trigger-site-visit" style="width: 100%;">
+            Schedule a Site Visit
+          </button>
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <div class="drawer-contact-info">
+          <div>Email: <a href="mailto:concierge@floracity.demo" style="color: var(--color-gold);">concierge@floracity.demo</a></div>
+          <div>Advisory Helpline: +91 1800 200 FLORA (Demonstration)</div>
+        </div>
+        <div class="drawer-socials">
+          <a href="#linkedin" class="drawer-social-icon" aria-label="LinkedIn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="#instagram" class="drawer-social-icon" aria-label="Instagram">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#youtube" class="drawer-social-icon" aria-label="YouTube">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Search Overlay Modal -->
+    <div class="search-modal" role="dialog" aria-modal="true" aria-label="Search Flora City">
+      <button class="search-close-btn" aria-label="Close search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="search-box-container">
+        <span class="eyebrow" style="color: var(--color-gold);">Property &amp; Information Search</span>
+        <input type="text" class="search-input" placeholder="Search by city, project name, or BHK..." autofocus />
+      </div>
+      <div class="search-results-list"></div>
+    </div>
+
+    <!-- MAIN HOMEPAGE SECTIONS -->
+    <main id="main-content">
+
+      <!-- ===================================================================
+           SECTION A: HERO BANNER & IMAGE SLIDER
+           =================================================================== -->
+      <section class="hero-section" id="hero-slider" aria-label="Flora City Signature Residences">
+        <div class="hero-slider-container">
+          <!-- Slide 1 -->
+          <div class="hero-slide active" data-slide-index="0">
+            <img 
+              src="/assets/images/hero_luxury_residence_1792473663001.jpg" 
+              alt="Flora Botanica Residences luxury towers and landscaped reflection pool" 
+              class="hero-slide-img" 
+            />
+            <div class="hero-scrim"></div>
+            <div class="container hero-content-container">
+              <div class="hero-content">
+                <div class="hero-rec-badge" aria-label="Curated Recommendation">
+                  <span class="hero-rec-badge-tag">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    Recommended
+                  </span>
+                  <span class="hero-rec-badge-text">Top Pick for Families · 78% Green Canopy · Gwalior</span>
+                  <span class="hero-rec-badge-score">98% Match</span>
+                </div>
+                <span class="eyebrow" style="color: var(--color-gold);">Signature Collection · Gwalior</span>
+                <h1 class="hero-headline">Spaces That Inspire.<br>Communities That Flourish.</h1>
+                <p class="hero-desc">
+                  Discover thoughtfully designed spaces where contemporary living meets nature, comfort, and community at Flora Botanica.
+                </p>
+                <div class="hero-cta-group">
+                  <a href="projects.html" class="btn btn-gold">
+                    Explore Projects
+                  </a>
+                  <button class="btn btn-outline-white btn-trigger-enquiry" data-project="Flora Botanica Residences">
+                    Enquire Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="hero-slide" data-slide-index="1">
+            <img 
+              src="/assets/images/project_flora_grand_tower_1792473663159.jpg" 
+              alt="The Flora Reserve illuminated dusk towers and palm boulevard" 
+              class="hero-slide-img" 
+            />
+            <div class="hero-scrim"></div>
+            <div class="container hero-content-container">
+              <div class="hero-content">
+                <div class="hero-rec-badge" aria-label="Curated Recommendation">
+                  <span class="hero-rec-badge-tag">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    Recommended
+                  </span>
+                  <span class="hero-rec-badge-text">Top Pick for Ultra-HNIs · Private Forest Villas &amp; Plunge Pools</span>
+                  <span class="hero-rec-badge-score">99% Match</span>
+                </div>
+                <span class="eyebrow" style="color: var(--color-gold);">Exclusive Forest Villas · Indore</span>
+                <h1 class="hero-headline">Low-Density Forest Villas<br>Along the Super Corridor.</h1>
+                <p class="hero-desc">
+                  Private estates enveloped by native woodlands, cantilevered plunge pools, and uninterrupted parkland views at The Flora Reserve.
+                </p>
+                <div class="hero-cta-group">
+                  <button class="btn btn-gold" onclick="window.floraApp.openProjectDetailModal('the-flora-reserve')">
+                    View Forest Villas
+                  </button>
+                  <button class="btn btn-outline-white btn-trigger-site-visit" data-project="The Flora Reserve">
+                    Book Private Tour
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="hero-slide" data-slide-index="2">
+            <img 
+              src="/assets/images/hero_skyline_penthouse_1792475200074.jpg" 
+              alt="Flora Solitaire bespoke sea-facing sky suites and penthouse pool" 
+              class="hero-slide-img" 
+            />
+            <div class="hero-scrim"></div>
+            <div class="container hero-content-container">
+              <div class="hero-content">
+                <div class="hero-rec-badge" aria-label="Curated Recommendation">
+                  <span class="hero-rec-badge-tag">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    Recommended
+                  </span>
+                  <span class="hero-rec-badge-text">Waterfront Luxury · 48 Rare Sky Residences · Worli Bay</span>
+                  <span class="hero-rec-badge-score">99% Match</span>
+                </div>
+                <span class="eyebrow" style="color: var(--color-gold);">Waterfront Luxury · Mumbai</span>
+                <h1 class="hero-headline">Bespoke Sea-Facing Suites<br>Commanding Worli Bay.</h1>
+                <p class="hero-desc">
+                  Only 48 rare sky residences with private elevator foyers, floating cabana infinity pool, and 180-degree ocean views at Flora Solitaire.
+                </p>
+                <div class="hero-cta-group">
+                  <button class="btn btn-gold" onclick="window.floraApp.openProjectDetailModal('flora-solitaire')">
+                    Discover Solitaire
+                  </button>
+                  <button class="btn btn-outline-white btn-trigger-enquiry" data-project="Flora Solitaire">
+                    Enquire Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="hero-slide" data-slide-index="3">
+            <img 
+              src="/assets/images/hero_botanical_pavilion_1792475216155.jpg" 
+              alt="Flora Grand Pavilion grand sculptural entrance gates and water cascade" 
+              class="hero-slide-img" 
+            />
+            <div class="hero-scrim"></div>
+            <div class="container hero-content-container">
+              <div class="hero-content">
+                <div class="hero-rec-badge" aria-label="Curated Recommendation">
+                  <span class="hero-rec-badge-tag">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    Recommended
+                  </span>
+                  <span class="hero-rec-badge-text">Generational Legacy · Bronze Gateways &amp; 1-Acre Private Gardens</span>
+                  <span class="hero-rec-badge-score">97% Match</span>
+                </div>
+                <span class="eyebrow" style="color: var(--color-gold);">Iconic Landmark · Delhi NCR</span>
+                <h1 class="hero-headline">Botanical Sanctuary<br>In a Prestigious Gated Enclave.</h1>
+                <p class="hero-desc">
+                  Grand cascading fountains, sculptural bronze entry pavilions, and multi-tier private gardens crafted for generational legacy living.
+                </p>
+                <div class="hero-cta-group">
+                  <button class="btn btn-gold" onclick="window.floraApp.openProjectDetailModal('flora-grand-pavilion')">
+                    Explore Enclave
+                  </button>
+                  <button class="btn btn-outline-white btn-trigger-site-visit" data-project="Flora Grand Pavilion">
+                    Schedule Site Visit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="hero-slide" data-slide-index="4">
+            <img 
+              src="/assets/images/values_sustainable_architecture_1792473663362.jpg" 
+              alt="Flora Verdant Heights Arera Hills Bhopal" 
+              class="hero-slide-img" 
+            />
+            <div class="hero-scrim"></div>
+            <div class="container hero-content-container">
+              <div class="hero-content">
+                <div class="hero-rec-badge" aria-label="Curated Recommendation">
+                  <span class="hero-rec-badge-tag">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    Recommended
+                  </span>
+                  <span class="hero-rec-badge-text">Ready to Move · Complete OC Received · 360° Lake Views</span>
+                  <span class="hero-rec-badge-score">96% Match</span>
+                </div>
+                <span class="eyebrow" style="color: var(--color-gold);">Ready to Move · Bhopal</span>
+                <h1 class="hero-headline">Panoramic Lakeview Residences<br>High Above Arera Hills.</h1>
+                <p class="hero-desc">
+                  Move in immediately. Sky mansions with 360-degree water vistas, private elevator foyers, and complete Occupancy Certificate (OC).
+                </p>
+                <div class="hero-cta-group">
+                  <button class="btn btn-gold" onclick="window.floraApp.openProjectDetailModal('flora-verdant-heights')">
+                    Explore Ready Homes
+                  </button>
+                  <button class="btn btn-outline-white btn-trigger-site-visit" data-project="Flora Verdant Heights">
+                    Schedule Walkthrough
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="hero-slide" data-slide-index="5">
+            <img 
+              src="/assets/images/sustainability_green_living_1792473663058.jpg" 
+              alt="Flora Serene Woods Whitefield Bengaluru" 
+              class="hero-slide-img" 
+            />
+            <div class="hero-scrim"></div>
+            <div class="container hero-content-container">
+              <div class="hero-content">
+                <div class="hero-rec-badge" aria-label="Curated Recommendation">
+                  <span class="hero-rec-badge-tag">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    Recommended
+                  </span>
+                  <span class="hero-rec-badge-text">Biophilic Smart Living · Net-Zero AI Homes · Whitefield</span>
+                  <span class="hero-rec-badge-score">98% Match</span>
+                </div>
+                <span class="eyebrow" style="color: var(--color-gold);">Biophilic Living · Bengaluru</span>
+                <h1 class="hero-headline">Biophilic Smart Homes<br>Nestled in Heritage Groves.</h1>
+                <p class="hero-desc">
+                  Ancient banyan trees meet modern AI-driven energy conservation and organic community orchards at Flora Serene Woods, Whitefield.
+                </p>
+                <div class="hero-cta-group">
+                  <button class="btn btn-gold" onclick="window.floraApp.openProjectDetailModal('flora-serene-woods')">
+                    Explore Smart Homes
+                  </button>
+                  <button class="btn btn-outline-white btn-trigger-enquiry" data-project="Flora Serene Woods">
+                    Register Early Interest
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Side Navigation Arrows (Desktop / Tablet) -->
+        <button class="hero-side-nav hero-side-prev" aria-label="Previous Slide" title="Previous Slide">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="hero-side-nav hero-side-next" aria-label="Next Slide" title="Next Slide">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+
+        
+
+              <!-- Fast Recommendation Filter Controls -->
+              <form class="hero-rec-form" id="hero-rec-form" onsubmit="event.preventDefault(); window.floraApp.filterHeroRecommendations();">
+                <div class="hero-rec-field">
+                  <label for="hero-rec-city" class="hero-rec-label">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>City</span>
+                  </label>
+                  <select id="hero-rec-city" class="hero-rec-select" aria-label="Select Preferred City">
+                    <option value="all">All Cities (Pan-India)</option>
+                    <option value="Mumbai">Mumbai (Worli Bay)</option>
+                    <option value="Indore">Indore (Super Corridor)</option>
+                    <option value="Gwalior">Gwalior (City Center Ext)</option>
+                    <option value="Delhi NCR">Delhi NCR</option>
+                    <option value="Bhopal">Bhopal (Arera Hills)</option>
+                    <option value="Bengaluru">Bengaluru (Whitefield)</option>
+                  </select>
+                </div>
+
+                <div class="hero-rec-field">
+                  <label for="hero-rec-type" class="hero-rec-label">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                    <span>Typology</span>
+                  </label>
+                  <select id="hero-rec-type" class="hero-rec-select" aria-label="Select Typology">
+                    <option value="all">Any Typology</option>
+                    <option value="2 BHK">2 BHK Apartments</option>
+                    <option value="3 BHK">3 BHK Luxury Homes</option>
+                    <option value="4 BHK">4 &amp; 5 BHK Sky Suites</option>
+                    <option value="Villas">Forest &amp; Botanical Villas</option>
+                  </select>
+                </div>
+
+                <div class="hero-rec-field">
+                  <label for="hero-rec-budget" class="hero-rec-label">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v12M15 9.5a3.5 3.5 0 0 0-7 0c0 4 7 2 7 6a3.5 3.5 0 0 1-7 0"></path></svg>
+                    <span>Budget Range</span>
+                  </label>
+                  <select id="hero-rec-budget" class="hero-rec-select" aria-label="Select Budget Range">
+                    <option value="all">Any Budget Range</option>
+                    <option value="under-1cr">Under ₹ 1.0 Crore</option>
+                    <option value="1cr-2cr">₹ 1.0 Cr – ₹ 2.0 Cr</option>
+                    <option value="2cr-5cr">₹ 2.0 Cr – ₹ 5.0 Cr</option>
+                    <option value="ultra">₹ 5.0 Cr+ (Ultra-Luxury)</option>
+                  </select>
+                </div>
+
+                <div class="hero-rec-submit-wrap">
+                  <button type="submit" class="hero-rec-submit-btn" id="hero-rec-submit-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>Find Recommendations</span>
+                    <span class="hero-rec-count-badge" id="hero-rec-count">6</span>
+                  </button>
+                </div>
+              </form>
+
+              <!-- Curated Results Drawer / Dropdown Panel -->
+              <div class="hero-rec-drawer" id="hero-rec-drawer" style="display: none;" aria-hidden="true">
+                <div class="hero-rec-drawer-header">
+                  <div class="hero-rec-drawer-title-group">
+                    <h4 class="hero-rec-drawer-title" id="hero-rec-drawer-title">Recommended Residences For You</h4>
+                    <span class="hero-rec-drawer-meta" id="hero-rec-drawer-meta">Curated based on architectural prestige and high capital growth</span>
+                  </div>
+                  <button type="button" class="hero-rec-drawer-close" id="hero-rec-drawer-close" aria-label="Close recommendations">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  </button>
+                </div>
+                <div class="hero-rec-cards-scroll" id="hero-rec-cards-container">
+                  <!-- Dynamically populated recommendation cards -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Interactive Bottom Slider Strip (Godrej Style) -->
+        <div class="hero-bottom-strip">
+          <div class="container hero-strip-container">
+            <!-- Counter & Nav Arrow Controls -->
+            <div class="hero-counter-controls">
+              <div class="hero-fraction-counter" aria-live="polite">
+                <span class="hero-current-num">01</span>
+                <span class="hero-separator">/</span>
+                <span class="hero-total-num">06</span>
+              </div>
+              <div class="hero-nav-arrow-group">
+                <button class="hero-nav-arrow hero-prev-btn" aria-label="Previous slide" title="Previous Slide">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button class="hero-nav-arrow hero-next-btn" aria-label="Next slide" title="Next Slide">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+
+              <!-- Mobile Pagination Dots -->
+              <div class="hero-dots-container" role="tablist" aria-label="Slide Dots">
+                <button class="hero-dot active" data-dot-index="0" aria-label="Go to Slide 1" role="tab" aria-selected="true"></button>
+                <button class="hero-dot" data-dot-index="1" aria-label="Go to Slide 2" role="tab" aria-selected="false"></button>
+                <button class="hero-dot" data-dot-index="2" aria-label="Go to Slide 3" role="tab" aria-selected="false"></button>
+                <button class="hero-dot" data-dot-index="3" aria-label="Go to Slide 4" role="tab" aria-selected="false"></button>
+                <button class="hero-dot" data-dot-index="4" aria-label="Go to Slide 5" role="tab" aria-selected="false"></button>
+                <button class="hero-dot" data-dot-index="5" aria-label="Go to Slide 6" role="tab" aria-selected="false"></button>
+              </div>
+            </div>
+
+            <!-- Thumbnail Slider Cards Strip -->
+            <div class="hero-thumbnails-track" role="tablist" aria-label="Hero Slide Selector">
+              <!-- Thumb 1 -->
+              <div class="hero-thumb-card active" data-thumb-index="0" role="tab" tabindex="0" aria-label="Slide 1: Flora Botanica, Gwalior">
+                <div class="hero-thumb-img-wrap">
+                  <img src="/assets/images/hero_luxury_residence_1792473663001.jpg" alt="Flora Botanica thumbnail" class="hero-thumb-img" />
+                </div>
+                <div class="hero-thumb-info">
+                  <span class="hero-thumb-city">Gwalior</span>
+                  <div class="hero-thumb-title">Flora Botanica</div>
+                </div>
+                <div class="hero-thumb-progress">
+                  <div class="hero-thumb-progress-bar"></div>
+                </div>
+              </div>
+
+              <!-- Thumb 2 -->
+              <div class="hero-thumb-card" data-thumb-index="1" role="tab" tabindex="0" aria-label="Slide 2: The Flora Reserve, Indore">
+                <div class="hero-thumb-img-wrap">
+                  <img src="/assets/images/project_flora_grand_tower_1792473663159.jpg" alt="The Flora Reserve thumbnail" class="hero-thumb-img" />
+                </div>
+                <div class="hero-thumb-info">
+                  <span class="hero-thumb-city">Indore</span>
+                  <div class="hero-thumb-title">The Flora Reserve</div>
+                </div>
+                <div class="hero-thumb-progress">
+                  <div class="hero-thumb-progress-bar"></div>
+                </div>
+              </div>
+
+              <!-- Thumb 3 -->
+              <div class="hero-thumb-card" data-thumb-index="2" role="tab" tabindex="0" aria-label="Slide 3: Flora Solitaire, Mumbai">
+                <div class="hero-thumb-img-wrap">
+                  <img src="/assets/images/hero_skyline_penthouse_1792475200074.jpg" alt="Flora Solitaire thumbnail" class="hero-thumb-img" />
+                </div>
+                <div class="hero-thumb-info">
+                  <span class="hero-thumb-city">Mumbai</span>
+                  <div class="hero-thumb-title">Flora Solitaire</div>
+                </div>
+                <div class="hero-thumb-progress">
+                  <div class="hero-thumb-progress-bar"></div>
+                </div>
+              </div>
+
+              <!-- Thumb 4 -->
+              <div class="hero-thumb-card" data-thumb-index="3" role="tab" tabindex="0" aria-label="Slide 4: Flora Grand Pavilion, Delhi NCR">
+                <div class="hero-thumb-img-wrap">
+                  <img src="/assets/images/hero_botanical_pavilion_1792475216155.jpg" alt="Flora Grand Pavilion thumbnail" class="hero-thumb-img" />
+                </div>
+                <div class="hero-thumb-info">
+                  <span class="hero-thumb-city">Delhi NCR</span>
+                  <div class="hero-thumb-title">Grand Pavilion</div>
+                </div>
+                <div class="hero-thumb-progress">
+                  <div class="hero-thumb-progress-bar"></div>
+                </div>
+              </div>
+
+              <!-- Thumb 5 -->
+              <div class="hero-thumb-card" data-thumb-index="4" role="tab" tabindex="0" aria-label="Slide 5: Flora Verdant Heights, Bhopal">
+                <div class="hero-thumb-img-wrap">
+                  <img src="/assets/images/values_sustainable_architecture_1792473663362.jpg" alt="Flora Verdant Heights thumbnail" class="hero-thumb-img" />
+                </div>
+                <div class="hero-thumb-info">
+                  <span class="hero-thumb-city">Bhopal</span>
+                  <div class="hero-thumb-title">Verdant Heights</div>
+                </div>
+                <div class="hero-thumb-progress">
+                  <div class="hero-thumb-progress-bar"></div>
+                </div>
+              </div>
+
+              <!-- Thumb 6 -->
+              <div class="hero-thumb-card" data-thumb-index="5" role="tab" tabindex="0" aria-label="Slide 6: Flora Serene Woods, Bengaluru">
+                <div class="hero-thumb-img-wrap">
+                  <img src="/assets/images/sustainability_green_living_1792473663058.jpg" alt="Flora Serene Woods thumbnail" class="hero-thumb-img" />
+                </div>
+                <div class="hero-thumb-info">
+                  <span class="hero-thumb-city">Bengaluru</span>
+                  <div class="hero-thumb-title">Serene Woods</div>
+                </div>
+                <div class="hero-thumb-progress">
+                  <div class="hero-thumb-progress-bar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION B: OUR VALUES
+           =================================================================== -->
+      <section class="values-section section-padding" aria-labelledby="values-heading">
+        <div class="container">
+          <div class="values-header">
+            <span class="eyebrow">Our Values</span>
+            <h2 id="values-heading" class="section-title" style="max-width: 840px; margin: 0 auto 1.25rem;">
+              Crafting spaces that inspire life, nurture community, and bring people closer to nature.
+            </h2>
+            <p class="section-desc center">
+              Every Flora City development balances structural excellence with ecological stewardship, ensuring your home remains a source of enduring pride and quiet rejuvenation.
+            </p>
+          </div>
+
+          <!-- Editorial Visual Values Grid -->
+          <div class="values-grid">
+            <!-- Featured Value Card with Image -->
+            <div class="value-card featured">
+              <div class="value-card-img-wrap" style="height: 280px;">
+                <img 
+                  src="/src/assets/images/values_sustainable_architecture_1792473663362.jpg" 
+                  alt="Biophilic architectural facade with cascading greenery and timber louvers" 
+                  class="value-card-img" 
+                  loading="lazy"
+                />
+              </div>
+              <div class="value-card-body">
+                <span class="value-card-num">01. PILLAR</span>
+                <h3 class="value-card-title">Thoughtful Design</h3>
+                <p class="value-card-desc">
+                  Biophilic masterplans engineered around natural sunlight paths, thermal airflow, and direct visual connections to living plantscapes.
+                </p>
+              </div>
+            </div>
+
+            <!-- Value Card 2 -->
+            <div class="value-card">
+              <div class="value-card-body">
+                <span class="value-card-num">02. PILLAR</span>
+                <h3 class="value-card-title">Uncompromising Quality</h3>
+                <p class="value-card-desc">
+                  Stringent material selection, structural redundancy, and meticulous finishing ensure each residence endures gracefully across generations.
+                </p>
+              </div>
+            </div>
+
+            <!-- Value Card 3 -->
+            <div class="value-card">
+              <div class="value-card-body">
+                <span class="value-card-num">03. PILLAR</span>
+                <h3 class="value-card-title">Thriving Communities</h3>
+                <p class="value-card-desc">
+                  Vehicular-free central avenues, expansive clubhouse pavilions, and multigenerational recreation areas designed to foster genuine human warmth.
+                </p>
+              </div>
+            </div>
+
+            <!-- Value Card 4 -->
+            <div class="value-card">
+              <div class="value-card-body">
+                <span class="value-card-num">04. PILLAR</span>
+                <h3 class="value-card-title">Regenerative Living</h3>
+                <p class="value-card-desc">
+                  Committed to 75%+ green cover, 100% on-site rainwater percolation, solar common microgrids, and comprehensive zero-discharge systems.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <a href="about.html" class="btn btn-outline-forest">
+              Our Brand Story
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION C: FEATURED PROJECTS CAROUSEL
+           =================================================================== -->
+      <section class="projects-section section-padding bg-white" aria-labelledby="featured-projects-heading">
+        <div class="container">
+          <div class="section-header-row">
+            <div>
+              <span class="eyebrow">Portfolio Showcase</span>
+              <h2 id="featured-projects-heading" class="section-title">Featured Developments</h2>
+              <p class="section-desc">
+                Explore signature residences crafted with elevated biophilic details in high-growth corridors.
+              </p>
+            </div>
+            <div class="carousel-nav-buttons">
+              <button class="carousel-arrow projects-prev-btn" aria-label="Previous featured projects">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="carousel-arrow projects-next-btn" aria-label="Next featured projects">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="projects-carousel-wrapper">
+            <div class="projects-track">
+              <!-- Dynamically populated by FloraApp script -->
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 2rem;">
+            <a href="projects.html" class="btn btn-primary">
+              View All Projects
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION D: EXPLORE PROJECTS BY LOCATION
+           =================================================================== -->
+      <section class="location-section section-padding" aria-labelledby="location-heading">
+        <div class="container">
+          <span class="eyebrow">Geographic Reach</span>
+          <h2 id="location-heading" class="section-title">Explore Projects in Your Desired Locations</h2>
+          <p class="section-desc center">
+            Select a region to browse residential enclaves and upcoming land parcels.
+          </p>
+
+          <!-- Horizontal City Selector -->
+          <div class="city-pill-selector">
+            <!-- Dynamically populated by FloraApp script -->
+          </div>
+
+          <!-- Filtered Grid -->
+          <div class="location-filtered-grid">
+            <!-- Dynamically populated with project cards or informative empty state -->
+          </div>
+
+          <div style="text-align: center;">
+            <a href="locations.html" class="btn btn-outline-forest">
+              Explore All Locations
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION E: RECOGNIZED BY THE BEST (AWARDS CAROUSEL)
+           =================================================================== -->
+      <section class="awards-section section-padding" aria-labelledby="awards-heading">
+        <div class="container">
+          <div class="section-header-row">
+            <div>
+              <span class="eyebrow">Excellence &amp; Trust</span>
+              <h2 id="awards-heading" class="section-title">Recognized by the Best</h2>
+              <p class="section-desc">
+                Industry honors celebrating our commitment to sustainable design, on-time craftsmanship, and community building.
+              </p>
+            </div>
+            <div class="carousel-nav-buttons">
+              <button class="carousel-arrow awards-prev-btn" aria-label="Previous awards">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="carousel-arrow awards-next-btn" aria-label="Next awards">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="awards-carousel-wrapper">
+            <div class="awards-track">
+              <!-- Dynamically populated by FloraApp -->
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem; text-align: center;">
+            <a href="awards.html" class="btn-link">
+              View All Honors &amp; Certifications
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION F: SUSTAINABILITY AND GREEN LIVING
+           =================================================================== -->
+      <section class="sustainability-banner" aria-labelledby="sustainability-heading">
+        <img 
+          src="/src/assets/images/sustainability_green_living_1792473663058.jpg" 
+          alt="Aerial view of green sustainable master planned community" 
+          class="sustainability-bg-img" 
+        />
+        <div class="container sustainability-content">
+          <span class="eyebrow" style="color: var(--color-gold);">Environmental Stewardship</span>
+          <h2 id="sustainability-heading" class="section-title light">Building a Greener Tomorrow</h2>
+          <p class="section-desc light" style="max-width: 640px;">
+            Explore our approach to thoughtful design, greener spaces, and more responsible development.
+          </p>
+
+          <div class="sustainability-grid">
+            <div class="sustainability-tile">
+              <div class="sustainability-tile-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              </div>
+              <h3 class="sustainability-tile-title">75%+ Green Cover</h3>
+              <p class="sustainability-tile-desc">
+                Preserving native tree canopies, organic butterfly parks, and continuous woodland corridors in every masterplan.
+              </p>
+            </div>
+
+            <div class="sustainability-tile">
+              <div class="sustainability-tile-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              </div>
+              <h3 class="sustainability-tile-title">100% Water Rejuvenation</h3>
+              <p class="sustainability-tile-desc">
+                Dual-plumbing recycling, high-capacity rainwater percolation trenches, and zero-effluent discharge protocols.
+              </p>
+            </div>
+
+            <div class="sustainability-tile">
+              <div class="sustainability-tile-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+              </div>
+              <h3 class="sustainability-tile-title">Clean Solar Microgrids</h3>
+              <p class="sustainability-tile-desc">
+                Rooftop photovoltaic arrays energizing common utilities, LED corridors, and residential EV charging stations.
+              </p>
+            </div>
+
+            <div class="sustainability-tile">
+              <div class="sustainability-tile-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <h3 class="sustainability-tile-title">Passive Biophilic Design</h3>
+              <p class="sustainability-tile-desc">
+                High-performance double-glazing, natural cross-ventilation shafts, and non-toxic low-VOC interior specifications.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <a href="sustainability.html" class="btn btn-gold">
+              Explore Sustainability
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION G: PRESS RELEASES AND LATEST NEWS
+           =================================================================== -->
+      <section class="news-section section-padding" aria-labelledby="news-heading">
+        <div class="container">
+          <div class="section-header-row">
+            <div>
+              <span class="eyebrow">Media Center</span>
+              <h2 id="news-heading" class="section-title">Press Releases &amp; Latest Updates</h2>
+              <p class="section-desc">
+                Keep abreast of our latest land acquisitions, architectural milestones, and corporate announcements.
+              </p>
+            </div>
+            <div class="carousel-nav-buttons">
+              <button class="carousel-arrow news-prev-btn" aria-label="Previous news">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="carousel-arrow news-next-btn" aria-label="Next news">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="news-carousel-wrapper" style="overflow: hidden; padding-bottom: 1.5rem;">
+            <div class="news-track">
+              <!-- Dynamically populated by FloraApp -->
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 2rem;">
+            <a href="news.html" class="btn btn-outline-forest">
+              View All News
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION H: BRAND STORY & COMPANY INTRODUCTION
+           =================================================================== -->
+      <section class="story-section section-padding" aria-labelledby="story-heading">
+        <div class="container">
+          <div class="story-grid">
+            <div class="story-content">
+              <span class="eyebrow">Our Heritage &amp; Ethos</span>
+              <h2 id="story-heading" class="section-title">Designed for Living. Built for Belonging.</h2>
+              <p class="section-desc" style="margin-bottom: 1.5rem;">
+                Flora City was founded on a singular conviction: that the built environment should elevate the spirit rather than crowd it. In an era of hurried construction, we craft architectural landmarks rooted in natural proportion, spatial honesty, and lasting ecological vitality.
+              </p>
+              <p class="section-desc" style="margin-bottom: 2.25rem;">
+                From the drawing board to the final handover, every floor plan is calibrated to maximize natural light and privacy, creating tranquil havens where individuals and families genuinely thrive.
+              </p>
+              <a href="about.html" class="btn btn-primary">
+                Discover Our Story
+              </a>
+            </div>
+
+            <div class="story-img-container">
+              <img 
+                src="/src/assets/images/values_sustainable_architecture_1792473663362.jpg" 
+                alt="Flora City biophilic architectural residence with natural greenery" 
+                class="story-img" 
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION I: ENQUIRY CTA BANNER
+           =================================================================== -->
+      <section class="cta-banner-section" aria-labelledby="cta-heading">
+        <img 
+          src="/src/assets/images/hero_luxury_residence_1792473663001.jpg" 
+          alt="Luxury residential backdrop" 
+          class="cta-banner-bg" 
+        />
+        <div class="container cta-banner-content">
+          <span class="eyebrow" style="color: var(--color-gold);">Begin Your Journey</span>
+          <h2 id="cta-heading" class="section-title light">Find Your Place with Flora City</h2>
+          <p class="section-desc light center">
+            Tell us what you're looking for, and our team can help you explore suitable properties.
+          </p>
+
+          <div class="cta-actions-row">
+            <a href="projects.html" class="btn btn-outline-white">
+              Explore Projects
+            </a>
+            <button class="btn btn-gold btn-trigger-enquiry" data-project="General Portfolio Inquiry">
+              Request a Callback
+            </button>
+            <button class="btn btn-primary btn-trigger-site-visit">
+              Schedule a Site Visit
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- =======================================================================
+         SECTION J: FOOTER & LEGAL DIRECTORY
+         ======================================================================= -->
+    <footer class="site-footer" id="site-footer">
+      <div class="container">
+        <!-- Top Row: Brand Info + Multi-Column Links -->
+        <div class="footer-top-row">
+          <div class="footer-brand-summary">
+            <a href="index.html" class="brand-lockup">
+              <img src="/assets/logo/flora-city-logo-light.svg" alt="Flora City Logo" style="height: 38px;" />
+            </a>
+            <p class="footer-desc">
+              Flora City is a premier real estate developer crafting nature-integrated luxury residences, low-density villas, and modern workspaces engineered for wellness.
+            </p>
+            <div style="font-size: 0.8125rem; color: rgba(255,255,255,0.6); line-height: 1.6;">
+              <div>Corporate Office: Flora City Heights, Prime Boulevard</div>
+              <div>Central Contact Desk: +91 1800 200 FLORA</div>
+              <div>Official Correspondence: <span style="color: var(--color-gold);">concierge@floracity.demo</span></div>
+            </div>
+          </div>
+
+          <!-- Expandable Multi-Column Categories -->
+          <div class="footer-columns-grid">
+            <!-- Col 1 -->
+            <div class="footer-column">
+              <button class="footer-column-header">
+                <span>Know Us</span>
+                <span class="footer-accordion-icon">+</span>
+              </button>
+              <ul class="footer-column-links">
+                <li><a href="about.html" class="footer-link">About Flora City</a></li>
+                <li><a href="values.html" class="footer-link">Our Vision &amp; Values</a></li>
+                <li><a href="sustainability.html" class="footer-link">ESG &amp; Green Living</a></li>
+                <li><a href="awards.html" class="footer-link">Awards &amp; Recognition</a></li>
+                <li><a href="careers.html" class="footer-link">Careers</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 2 -->
+            <div class="footer-column">
+              <button class="footer-column-header">
+                <span>Projects</span>
+                <span class="footer-accordion-icon">+</span>
+              </button>
+              <ul class="footer-column-links">
+                <li><a href="projects.html" class="footer-link">All Developments</a></li>
+                <li><a href="residential.html" class="footer-link">Residential Towers</a></li>
+                <li><a href="commercial.html" class="footer-link">Commercial Parks</a></li>
+                <li><a href="upcoming.html" class="footer-link">Upcoming Enclaves</a></li>
+                <li><a href="completed.html" class="footer-link">Completed Estates</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div class="footer-column">
+              <button class="footer-column-header">
+                <span>Locations</span>
+                <span class="footer-accordion-icon">+</span>
+              </button>
+              <ul class="footer-column-links">
+                <li><a href="locations.html#gwalior" class="footer-link">Gwalior Estates</a></li>
+                <li><a href="locations.html#indore" class="footer-link">Indore Super Corridor</a></li>
+                <li><a href="locations.html#bhopal" class="footer-link">Bhopal Arera Hills</a></li>
+                <li><a href="locations.html#delhi" class="footer-link">Delhi NCR Projects</a></li>
+                <li><a href="locations.html#bengaluru" class="footer-link">Bengaluru Residences</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 4 -->
+            <div class="footer-column">
+              <button class="footer-column-header">
+                <span>Engage</span>
+                <span class="footer-accordion-icon">+</span>
+              </button>
+              <ul class="footer-column-links">
+                <li><a href="enquire.html" class="footer-link">Enquire Online</a></li>
+                <li><a href="site-visit.html" class="footer-link">Schedule a Site Visit</a></li>
+                <li><a href="news.html" class="footer-link">Media &amp; Press Releases</a></li>
+                <li><a href="contact.html" class="footer-link">Contact Advisory Desk</a></li>
+                <li><a href="sitemap.html" class="footer-link">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row: Legal Disclaimers & Copyright -->
+        <div class="footer-bottom-row">
+          <div class="footer-copyright">
+            &copy; 2026 FLORA CITY. All Rights Reserved. Demonstrative Real Estate Presentation.
+          </div>
+
+          <div class="footer-legal-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="privacy.html#disclaimer">Disclaimer &amp; RERA Note</a>
+            <a href="sitemap.html">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Smooth Scroll Button -->
+    <button class="back-to-top-btn" aria-label="Scroll back to top of page" title="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- Mobile Sticky Enquiry Bar (Within 15% Viewport Cap) -->
+    <aside class="mobile-sticky-bar" aria-label="Quick Actions">
+      <button class="btn btn-primary btn-trigger-enquiry" data-project="Flora City Quick Inquiry">
+        Enquire Now
+      </button>
+      <button class="btn btn-gold btn-trigger-site-visit">
+        Book Visit
+      </button>
+    </aside>
+
+    <!-- =======================================================================
+         INTERACTIVE MODALS
+         ======================================================================= -->
+
+    <!-- Quick Enquiry / Callback Modal -->
+    <div class="site-modal" id="enquiry-modal" role="dialog" aria-modal="true" aria-labelledby="enquiry-modal-title">
+      <div class="modal-dialog">
+        <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+        <span class="eyebrow" style="color: var(--color-gold);">Priority Advisory Desk</span>
+        <h3 class="modal-title" id="enquiry-modal-title">Enquire About Flora City</h3>
+        <p class="modal-desc">Share your preferences below and our senior residential advisor will connect with you promptly.</p>
+
+        <div class="form-alert"></div>
+
+        <form id="enquiry-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="enquiry-name">Full Name *</label>
+            <input type="text" id="enquiry-name" name="name" class="form-input" placeholder="e.g. Vikramaditya Sharma" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="enquiry-email">Email Address *</label>
+            <input type="email" id="enquiry-email" name="email" class="form-input" placeholder="e.g. vikram@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="enquiry-phone">Phone Number (10 Digits) *</label>
+            <input type="tel" id="enquiry-phone" name="phone" class="form-input" placeholder="e.g. 9876543210" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="enquiry-project">Interested Development</label>
+            <select id="enquiry-project" name="project" class="form-select">
+              <option value="Flora Botanica Residences">Flora Botanica Residences (Gwalior)</option>
+              <option value="The Flora Reserve">The Flora Reserve (Indore)</option>
+              <option value="Flora Verdant Heights">Flora Verdant Heights (Bhopal)</option>
+              <option value="Flora Grand Avenue">Flora Grand Avenue (Delhi NCR)</option>
+              <option value="Flora Serene Woods">Flora Serene Woods (Bengaluru)</option>
+              <option value="Flora Solitaire">Flora Solitaire (Mumbai)</option>
+              <option value="General Luxury Portfolio">General Luxury Portfolio</option>
+            </select>
+          </div>
+
+          <div class="form-checkbox-row">
+            <input type="checkbox" id="enquiry-consent" name="consent" required />
+            <label for="enquiry-consent">
+              I agree to Flora City's <a href="privacy.html" style="text-decoration: underline; color: var(--color-forest-dark);">Privacy Policy</a> and authorize advisors to contact me via phone or email for demonstration purposes.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-gold" style="width: 100%;">
+            Submit Enquiry
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Schedule Site Visit Modal -->
+    <div class="site-modal" id="site-visit-modal" role="dialog" aria-modal="true" aria-labelledby="visit-modal-title">
+      <div class="modal-dialog">
+        <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+        <span class="eyebrow" style="color: var(--color-gold);">VIP On-Site Experience</span>
+        <h3 class="modal-title" id="visit-modal-title">Schedule a Site Visit</h3>
+        <p class="modal-desc">Experience our signature sample apartments, biophilic landscape trails, and clubhouse amenities in person.</p>
+
+        <div class="form-alert"></div>
+
+        <form id="site-visit-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="visit-name">Full Name *</label>
+            <input type="text" id="visit-name" name="name" class="form-input" placeholder="e.g. Ananya Roy" required />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="visit-phone">Mobile *</label>
+              <input type="tel" id="visit-phone" name="phone" class="form-input" placeholder="9876543210" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="visit-email">Email *</label>
+              <input type="email" id="visit-email" name="email" class="form-input" placeholder="ananya@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="visit-project">Select Development *</label>
+            <select id="visit-project" name="project" class="form-select" required>
+              <option value="Flora Botanica Residences">Flora Botanica Residences (Gwalior)</option>
+              <option value="The Flora Reserve">The Flora Reserve (Indore)</option>
+              <option value="Flora Verdant Heights">Flora Verdant Heights (Bhopal)</option>
+              <option value="Flora Grand Avenue">Flora Grand Avenue (Delhi NCR)</option>
+              <option value="Flora Serene Woods">Flora Serene Woods (Bengaluru)</option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="visit-date">Preferred Date *</label>
+              <input type="date" id="visit-date" name="date" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="visit-time">Preferred Time Slot *</label>
+              <select id="visit-time" name="time" class="form-select" required>
+                <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+                <option value="12:00 PM - 02:00 PM">12:00 PM - 02:00 PM</option>
+                <option value="02:00 PM - 04:00 PM">02:00 PM - 04:00 PM</option>
+                <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-checkbox-row">
+            <input type="checkbox" id="visit-consent" name="consent" required />
+            <label for="visit-consent">
+              I agree to the <a href="privacy.html" style="text-decoration: underline;">Terms &amp; Privacy Policy</a> and confirm this visit booking.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Confirm Visit Appointment
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Project & News Detail Modal Container -->
+    <div class="site-modal" id="project-detail-modal" role="dialog" aria-modal="true" aria-label="Development Details">
+      <div class="modal-dialog" style="max-width: 780px;">
+        <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+        <div class="project-detail-content-target">
+          <!-- Populated by FloraApp -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image View">
+      <button class="lightbox-close-btn" aria-label="Close image">&times;</button>
+      <img src="" alt="Enlarged Architectural Rendering" class="lightbox-img" id="lightbox-target-img" />
+    </div>
+
+    <!-- Mobile Sticky Quick-Action Bar (Godrej Style) -->
+    <aside class="mobile-sticky-bar" aria-label="Mobile Quick Contact Actions">
+      <a href="tel:+911800200FLORA" class="sticky-action-btn sticky-call-btn" title="Call Concierge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Call</span>
+      </a>
+      <button class="sticky-action-btn sticky-visit-btn btn-trigger-site-visit" data-project="Flora City Master Portfolio" title="Schedule Site Visit">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <span>Site Visit</span>
+      </button>
+      <button class="sticky-action-btn sticky-enquire-btn btn-trigger-enquiry" data-project="Flora City Master Portfolio" title="Enquire Online">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <span>Enquire Now</span>
+      </button>
+    </aside>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+  </body>
+</html>

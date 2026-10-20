@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule a Site Visit | Flora City Luxury Residences</title>
+    <meta name="description" content="Book a private VIP site walkthrough of Flora City developments. Experience sample residences, clubhouse facilities, and lush biophilic grounds." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text"><span class="brand-name">Flora City</span><span class="brand-sub">Estates &amp; Residences</span></div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="action-icon-btn btn-open-search" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Personalized Hospitality</span>
+        <h1 class="section-title">Schedule an On-Site Experience</h1>
+        <p class="section-desc">
+          Nothing compares to experiencing the serenity of our biophilic grounds in person. Choose your preferred date and time, and our estate concierge will arrange a curated walkthrough.
+        </p>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <main class="section-padding bg-white">
+      <div class="container-narrow">
+        
+        <div style="background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: clamp(2rem, 5vw, 3.5rem); box-shadow: var(--shadow-card);">
+          
+          <div class="form-alert"></div>
+
+          <form id="site-visit-form" novalidate>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;">
+              
+              <div class="form-group">
+                <label class="form-label" for="visit-name">Full Name *</label>
+                <input type="text" id="visit-name" name="name" class="form-input" placeholder="e.g. Radhika Sen" required />
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="visit-phone">Mobile Phone (10 digits) *</label>
+                  <input type="tel" id="visit-phone" name="phone" class="form-input" placeholder="9876543210" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="visit-email">Email Address *</label>
+                  <input type="email" id="visit-email" name="email" class="form-input" placeholder="radhika@example.com" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="visit-project">Select Development *</label>
+                <select id="visit-project" name="project" class="form-select" required>
+                  <option value="Flora Botanica Residences (Gwalior)">Flora Botanica Residences (City Center Ext., Gwalior)</option>
+                  <option value="The Flora Reserve (Indore)">The Flora Reserve (Super Corridor, Indore)</option>
+                  <option value="Flora Verdant Heights (Bhopal)">Flora Verdant Heights (Arera Hills, Bhopal)</option>
+                  <option value="Flora Grand Avenue (Delhi NCR)">Flora Grand Avenue (Golf Course Ext., Delhi NCR)</option>
+                  <option value="Flora Serene Woods (Bengaluru)">Flora Serene Woods (Whitefield, Bengaluru)</option>
+                </select>
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="visit-date">Preferred Date *</label>
+                  <input type="date" id="visit-date" name="date" class="form-input" required />
+                  <span style="font-size: 0.75rem; color: var(--color-muted);">Bookings must be made at least 1 day in advance.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="visit-time">Preferred Time Slot *</label>
+                  <select id="visit-time" name="time" class="form-select" required>
+                    <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM (Morning Slot)</option>
+                    <option value="12:00 PM - 02:00 PM">12:00 PM - 02:00 PM (Midday Slot)</option>
+                    <option value="02:00 PM - 04:00 PM">02:00 PM - 04:00 PM (Afternoon Slot)</option>
+                    <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM (Golden Hour Slot)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="visit-visitors">Number of Visitors</label>
+                <select id="visit-visitors" name="visitors" class="form-select">
+                  <option value="1-2 Persons">1 - 2 Persons</option>
+                  <option value="3-4 Persons (Family)">3 - 4 Persons (Family)</option>
+                  <option value="5+ Persons">5+ Persons</option>
+                </select>
+              </div>
+
+              <div class="form-checkbox-row">
+                <input type="checkbox" id="visit-consent" name="consent" required />
+                <label for="visit-consent">
+                  I accept the <a href="privacy.html" style="text-decoration: underline;">Privacy Policy</a> and confirm this appointment request for demonstration purposes.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
+                Confirm Site Visit Appointment
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom-row" style="padding-top: 0;">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+          <div class="footer-legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script>
+      // Enforce min date = tomorrow
+      document.addEventListener('DOMContentLoaded', () => {
+        const dateInput = document.getElementById('visit-date');
+        if (dateInput) {
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          dateInput.min = tomorrow.toISOString().split('T')[0];
+        }
+      });
+    </script>
+  </body>
+</html>

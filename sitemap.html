@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _rawFetch = window.fetch;
+          var _activeFetch = _rawFetch;
+          function safeDefine(target, prop, getter, setter) {
+            try {
+              Object.defineProperty(target, prop, {
+                configurable: true,
+                enumerable: true,
+                get: getter,
+                set: setter
+              });
+            } catch (e) {}
+          }
+          var getFn = function() { return _activeFetch; };
+          var setFn = function(fn) { _activeFetch = fn; };
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            safeDefine(Window.prototype, 'fetch', getFn, setFn);
+          }
+          safeDefine(window, 'fetch', getFn, setFn);
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sitemap | Flora City Digital Directory</title>
+    <meta name="description" content="Complete sitemap and page directory for Flora City real estate website." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="brand-lockup">
+          <img src="/assets/logo/flora-city-logo.svg" alt="Flora City Logo" class="brand-logo-svg" />
+          <div class="brand-text"><span class="brand-name">Flora City</span><span class="brand-sub">Estates &amp; Residences</span></div>
+        </a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="desktop-nav-link">Home</a>
+          <a href="about.html" class="desktop-nav-link">About Us</a>
+          <a href="projects.html" class="desktop-nav-link">Projects</a>
+          <a href="locations.html" class="desktop-nav-link">Locations</a>
+          <a href="sustainability.html" class="desktop-nav-link">Sustainability</a>
+          <a href="awards.html" class="desktop-nav-link">Awards</a>
+          <a href="news.html" class="desktop-nav-link">Media</a>
+          <a href="contact.html" class="desktop-nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="menu-toggle-btn" aria-label="Open Navigation Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-ivory">
+      <div class="container">
+        <span class="eyebrow">Directory Navigation</span>
+        <h1 class="section-title">Flora City Sitemap</h1>
+        <p class="section-desc">Quick navigation to all sections and portals across our digital presence.</p>
+      </div>
+    </section>
+
+    <!-- Directory Grid -->
+    <main class="section-padding bg-white">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem;">
+          
+          <div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-forest-dark); margin-bottom: 1rem; border-bottom: 2px solid var(--color-gold); padding-bottom: 0.5rem;">Main Pages</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+              <li><a href="index.html" class="btn-link">Home Page</a></li>
+              <li><a href="about.html" class="btn-link">About Flora City</a></li>
+              <li><a href="values.html" class="btn-link">Our Vision &amp; Values</a></li>
+              <li><a href="careers.html" class="btn-link">Careers at Flora City</a></li>
+              <li><a href="contact.html" class="btn-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-forest-dark); margin-bottom: 1rem; border-bottom: 2px solid var(--color-gold); padding-bottom: 0.5rem;">Developments</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+              <li><a href="projects.html" class="btn-link">All Projects Portfolio</a></li>
+              <li><a href="residential.html" class="btn-link">Residential Collection</a></li>
+              <li><a href="commercial.html" class="btn-link">Commercial Promenades</a></li>
+              <li><a href="upcoming.html" class="btn-link">Upcoming Enclaves</a></li>
+              <li><a href="completed.html" class="btn-link">Delivered Estates</a></li>
+              <li><a href="project-detail.html" class="btn-link">Flora Botanica Details</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-forest-dark); margin-bottom: 1rem; border-bottom: 2px solid var(--color-gold); padding-bottom: 0.5rem;">Locations</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+              <li><a href="locations.html#gwalior" class="btn-link">Gwalior (City Center Ext.)</a></li>
+              <li><a href="locations.html#indore" class="btn-link">Indore (Super Corridor)</a></li>
+              <li><a href="locations.html#bhopal" class="btn-link">Bhopal (Arera Hills)</a></li>
+              <li><a href="locations.html#delhi" class="btn-link">Delhi NCR (Golf Course Ext.)</a></li>
+              <li><a href="locations.html#bengaluru" class="btn-link">Bengaluru (Whitefield)</a></li>
+              <li><a href="locations.html#mumbai" class="btn-link">Mumbai (Worli Bay)</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-forest-dark); margin-bottom: 1rem; border-bottom: 2px solid var(--color-gold); padding-bottom: 0.5rem;">Engage &amp; Legal</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+              <li><a href="enquire.html" class="btn-link">Online Enquiry Desk</a></li>
+              <li><a href="site-visit.html" class="btn-link">Schedule a Site Visit</a></li>
+              <li><a href="news.html" class="btn-link">News &amp; Media</a></li>
+              <li><a href="sustainability.html" class="btn-link">Sustainability &amp; ESG</a></li>
+              <li><a href="awards.html" class="btn-link">Awards &amp; Recognition</a></li>
+              <li><a href="privacy.html" class="btn-link">Privacy Policy</a></li>
+              <li><a href="terms.html" class="btn-link">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom-row" style="padding-top: 0;">
+          <div class="footer-copyright">&copy; 2026 FLORA CITY. Demonstrative Real Estate Presentation.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
